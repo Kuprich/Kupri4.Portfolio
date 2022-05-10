@@ -1,4 +1,5 @@
 import React from 'react';
+import Sidebar from './components/Sidebar'
 
 function App() {
   return (
@@ -8,7 +9,7 @@ function App() {
 
           <div className="col-lg-3">
             <div className="app__sidebar">
-              sidebar
+              <Sidebar />
             </div>
           </div>
 
