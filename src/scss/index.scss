@@ -1,0 +1,56 @@
+$sizes: (
+    "xs":320px,
+    "sm":576px,
+    "md":768px,
+    "lg":992px,
+    "xl":1200px
+);
+
+@mixin media($minmax, $media) {
+
+    @each $size,
+    $resolution in $sizes {
+        @if $media == $size {
+            @media only screen and (#{$minmax}-width: $resolution) {
+                @content;
+            }
+        }
+    }
+}
+
+body {
+    background: #00F260;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right bottom, #0575E6, #00F260);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right bottom, #0575E6, #00F260);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-attachment: fixed;
+}
+
+.container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.app {
+
+    &__sidebar,
+    &__content {
+        border-radius: 20px;
+        padding: 25px 15px;
+        background-color: #fff;
+        height: 90vh;
+    }
+
+    &__content {
+        @include media("max", "lg") {
+            margin-top: 30px;
+        }
+
+        @include media("max", "md") {
+            margin-top: 15px;
+        }
+    }
+
+}

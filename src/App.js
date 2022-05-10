@@ -6,13 +6,13 @@ function App() {
       <div className="container">
         <div className="row">
 
-          <div className="col-3">
+          <div className="col-lg-3">
             <div className="app__sidebar">
               sidebar
             </div>
           </div>
 
-          <div className="col-9">
+          <div className="col-lg-9">
             <div className="app__content">
               content
             </div>
