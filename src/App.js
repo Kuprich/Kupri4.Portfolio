@@ -8,9 +8,7 @@ function App() {
         <div className="row">
 
           <div className="col-lg-3">
-            <div className="app__sidebar">
               <Sidebar />
-            </div>
           </div>
 
           <div className="col-lg-9">

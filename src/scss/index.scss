@@ -10,7 +10,7 @@ $sizes: (
 
     @each $size,
     $resolution in $sizes {
-        @if $media == $size {
+        @if $media ==$size {
             @media only screen and (#{$minmax}-width: $resolution) {
                 @content;
             }
@@ -18,13 +18,63 @@ $sizes: (
     }
 }
 
-body {
+@font-face {
+    font-family: "GlorySignature";
+    src: url("../fonts/GlorySignature/GlorySignature.otf");
+}
+
+@font-face {
+    font-family: "Buyan";
+    src: url("../fonts/Buyan/BuyanRegular.ttf");
+}
+
+@font-face {
+    font-family: "Outreque";
+    src: url("../fonts/Outreque/OutrequeRegular.ttf");
+}
+
+@font-face {
+    font-family: "KalyantDemo";
+    src: url("../fonts/KalyantDemo/KalyantDemoLight.otf");
+}
+
+@font-face {
+    font-family: "KalyantDemoBold";
+    src: url("../fonts/KalyantDemo/KalyantDemoBold.otf");
+}
+
+$light-gray: #f1f1f1;
+$green: #00F260;
+$blue: #0575E6;
+$black: #242424;
+
+a,
+a:link,
+a:visited,
+a:focus {
+    text-decoration: none;
+    color: $black;
+    transition: 0.4s;
+}
+
+a:hover {
+    color: #000;
+}
+
+.bkg-gradient {
     background: #00F260;
     /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right bottom, #0575E6, #00F260);
+    background: -webkit-linear-gradient(to right bottom, $blue, $green);
     /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right bottom, #0575E6, #00F260);
+    background: linear-gradient(to right bottom, $blue, $green);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+body {
+    font-family: "KalyantDemo";
+    font-size: 20px;
+    color: $black;
     background-attachment: fixed;
 }
 
@@ -35,10 +85,10 @@ body {
 
 .app {
 
-    &__sidebar,
+    .sidebar,
     &__content {
         border-radius: 20px;
-        padding: 25px 15px;
+        padding: 20px 15px;
         background-color: #fff;
         height: 90vh;
         box-shadow: 0 0 10px #000;
@@ -53,5 +103,54 @@ body {
             margin-top: 15px;
         }
     }
+}
 
+.sidebar {
+    text-align: center;
+
+    &__item {
+        margin-bottom: 6px;
+        padding-top: 6px;
+        height: 40px;
+        border-radius: 30px;
+    }
+
+    &__icon {
+        width: 25px;
+        height: 25px;
+    }
+
+    &__avatar {
+        width: 100px;
+        height: auto;
+    }
+
+    &__title {
+        background-color: $light-gray;
+        border-radius: 30px;
+    }
+
+    &__name {
+        font-family: "KalyantDemoBold";
+        font-size: 30px;
+
+        span {
+            color: $green;
+        }
+    }
+
+    &__social-icons {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .contacts {
+        margin: 10px -15px;
+        background-color: $light-gray;
+    }
+
+    &__email {
+        color: #fff;
+        cursor: pointer;
+    }
 }
