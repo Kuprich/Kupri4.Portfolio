@@ -46,7 +46,7 @@ $sizes: (
 $light-gray: #f1f1f1;
 $green: #00F260;
 $blue: #0575E6;
-$black: #242424;
+$black: #354358;
 
 a,
 a:link,
@@ -152,5 +152,29 @@ body {
     &__email {
         color: #fff;
         cursor: pointer;
+    }
+}
+
+.navbar{
+    &__active{
+        font-size: 40px;
+        font-family: "KalyantDemoBold";
+        color: #354358;
+        border-bottom: 4px solid $green;
+    }
+
+    &__items{
+        display: flex;
+    }
+
+    &__item{
+        margin-left: 20px;
+        text-decoration: none;
+        font-size: 25px;
+        cursor: pointer;
+        transition: color 0.4s;
+    }
+    &__item:hover{
+        color: #000;
     }
 }
