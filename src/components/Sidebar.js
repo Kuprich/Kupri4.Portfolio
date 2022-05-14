@@ -1,5 +1,4 @@
 import react from "react";
-
 import myghtycoder from '../assets/mighty-coder.svg';
 import tie from '../assets/icons/tie.svg';
 import facebook from '../assets/icons/facebook.svg';
@@ -7,6 +6,7 @@ import instagramm from '../assets/icons/instagram.svg'
 import github from '../assets/icons/github.svg';
 import pin from '../assets/icons/pin.svg';
 import resume from '../assets/resume.pdf'
+
 
 
 
