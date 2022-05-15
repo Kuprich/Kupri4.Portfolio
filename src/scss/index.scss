@@ -43,10 +43,11 @@ $sizes: (
     src: url("../fonts/KalyantDemo/KalyantDemoBold.otf");
 }
 
-$light-gray: #f1f1f1;
-$green: #00F260;
+$light-gray: #dbdddf;
+$green: #0cb650;
 $blue: #0575E6;
-$black: #354358;
+$black: #333333;
+$dark-blue: #2d3b50;
 
 a,
 a:link,
@@ -72,18 +73,22 @@ a:hover {
 }
 
 body {
-    font-family: "KalyantDemo";
     font-size: 20px;
+    font-family: "KalyantDemo";
     color: $black;
     background-attachment: fixed;
 }
-
-.container {
-    padding-top: 50px;
-    padding-bottom: 50px;
+h1, h2, h3, h4, h5, h6{
+    font-family: "KalyantDemoBold";
+    font-size: 25px;
+    font-weight: 700;
+    color: $black;
 }
 
+
 .app {
+    padding-top: 50px;
+    padding-bottom: 50px;
 
     .sidebar,
     &__content {
@@ -133,7 +138,7 @@ body {
     &__name {
         font-family: "KalyantDemoBold";
         font-size: 30px;
-
+        color: $dark-blue;
         span {
             color: $green;
         }
@@ -157,9 +162,9 @@ body {
 
 .navbar{
     &__active{
-        font-size: 40px;
         font-family: "KalyantDemoBold";
-        color: #354358;
+        font-size: 2rem;
+        color: $dark-blue;
         border-bottom: 4px solid $green;
     }
 
@@ -168,13 +173,64 @@ body {
     }
 
     &__item{
+        font-size: 1.5rem;
         margin-left: 20px;
         text-decoration: none;
-        font-size: 25px;
         cursor: pointer;
-        transition: color 0.4s;
+        color: $dark-blue;
+        transition: 0.4s;
     }
     &__item:hover{
         color: #000;
+
+        background: #00F260;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right bottom, $blue, $green);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right bottom, $blue, $green);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        background-clip: text;
+    }
+}
+
+.about{
+
+    &__intro{
+        padding: 20px 0;
+        font-weight: normal;
+    }
+
+    &__heading{
+        font-family: "KalyantDemoBold";
+        color: $dark-blue;
+        font-size: 1.8rem;
+    }
+}
+
+.skill-cards__container{
+    background-color: $light-gray;
+    margin: 0 -39px;
+    padding: 39px;
+}
+
+.skill-card{
+    background-color: #fff;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    border-radius: 10px;
+    &__icon{
+        margin: 0 10px 10px 10px;
+        width: 40px;
+        height: 40px;
+    }
+    &__title{
+        font-size:20px;
+    }
+    &__content{
+        margin: 0;
+        font-size: 19px;
+        color: $dark-blue;
     }
 }
