@@ -44,7 +44,7 @@ $sizes: (
 }
 
 $light-gray: #dbdddf;
-$green: #0cb650;
+$green: #00F260;
 $blue: #0575E6;
 $black: #333333;
 $dark-blue: #2d3b50;
@@ -63,11 +63,12 @@ a:hover {
 }
 
 .bkg-gradient {
+
     background: #00F260;
     /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right bottom, $blue, $green);
+    background: -webkit-linear-gradient(to right, $green, $blue);
     /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right bottom, $blue, $green);
+    background: linear-gradient(to right, $green, $blue);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
@@ -95,7 +96,7 @@ h1, h2, h3, h4, h5, h6{
         border-radius: 20px;
         padding: 20px 15px;
         background-color: #fff;
-        height: 90vh;
+        min-height: 90vh;
         box-shadow: 0 0 10px #000;
     }
 
@@ -232,5 +233,24 @@ h1, h2, h3, h4, h5, h6{
         margin: 0;
         font-size: 19px;
         color: $dark-blue;
+    }
+}
+
+.bar{
+    background-color: $light-gray;
+    border-radius: 30px;
+    &__wrapper{
+        padding: 3px 0;
+        border-radius: 30px;
+    }
+    margin: 10px 0;
+
+    &__icon{
+        margin: 0 10px;
+        width: 15px;
+        height: 15px;
+    }
+    &__name{
+        color: #fff;
     }
 }
