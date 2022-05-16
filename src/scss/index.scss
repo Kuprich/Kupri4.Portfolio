@@ -254,3 +254,39 @@ h1, h2, h3, h4, h5, h6{
         color: #fff;
     }
 }
+
+.project-card{
+    &__image{
+        width: 100%;
+        transition: .5s
+    }
+    &__image:hover{
+        border-radius: 20px;
+    }
+
+    &__link{
+        display: block;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+    
+    &__title{
+        margin: 5px 0;
+        display: flex;
+        align-self: center;
+        justify-content: center;
+
+
+        img{
+            width: 25px;
+            margin-right: 10px;
+        }
+        img:hover{
+            border-radius: 20px;
+        }
+        p{
+            padding-top: 4px;
+            margin: 0;
+        }
+    }
+}
