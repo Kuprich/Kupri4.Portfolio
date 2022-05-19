@@ -1,4 +1,6 @@
 import React from "react";
+import { motion } from "framer-motion";
+
 import Bar from "../components/Bar";
 
 import reactIcon from "../assets/icons/react.svg";
@@ -39,9 +41,26 @@ const tools = [
   },
 ];
 
+const resume_variant = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.7,
+    },
+  },
+};
+
 const Resume = () => {
   return (
-    <div className="container">
+    <motion.div
+      className="container"
+      variants={resume_variant}
+      initial="hidden"
+      animate="visible"
+    >
       <div className="resume">
         <div className="row">
           <div className="col-lg-6">
@@ -104,7 +123,7 @@ const Resume = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

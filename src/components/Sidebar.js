@@ -1,4 +1,5 @@
 import react from "react";
+import { motion } from "framer-motion";
 import myghtycoder from "../assets/mighty-coder.svg";
 import tie from "../assets/icons/tie.svg";
 import facebook from "../assets/icons/facebook.svg";
@@ -12,8 +13,29 @@ const Sidebar = () => {
     window.open("mailto:ilya-kyp@yandex.ru");
   };
 
+  const sidebar_variant = {
+    hidden: {
+      x: "-30vh",
+      opacity: 0,
+    },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        delay: 0.2,
+        duration: 0.7,
+        type: "spring",
+      },
+    },
+  };
+
   return (
-    <div className="sidebar">
+    <motion.div
+      className="sidebar"
+      variants={sidebar_variant}
+      initial="hidden"
+      animate="visible"
+    >
       <img src={myghtycoder} alt="avatar" className="sidebar__avatar" />
       <div className="sidebar__name">
         Ilya <span>Kupriyanov</span>
@@ -51,7 +73,7 @@ const Sidebar = () => {
       >
         Email me
       </div>
-    </div>
+    </motion.div>
   );
 };
 

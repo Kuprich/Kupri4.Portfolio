@@ -1,10 +1,28 @@
 import React from "react";
+import { motion } from "framer-motion";
 import data_projects from "./data/projects_data";
 import ProjectCard from "./ProjectCard";
 
 const Projects = () => {
+  const projects_variant = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.7,
+      },
+    },
+  };
+
   return (
-    <div className="projects">
+    <motion.div
+      className="projects"
+      variants={projects_variant}
+      initial="hidden"
+      animate="visible"
+    >
       <div className="container">
         <div className="row">
           {data_projects.map((data_project, i) => (
@@ -12,7 +30,7 @@ const Projects = () => {
           ))}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

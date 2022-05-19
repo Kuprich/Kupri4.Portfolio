@@ -6,7 +6,7 @@ const ProjectCard = ({ project: { name, image, github_url, category } }) => {
     <div className="col-md-6 col-lg-4">
       <div className="project-card">
         <figure className="project-card__wrapper">
-          <a href={github_url} target="_blank">
+          <a href={github_url} target="_blank" className="project-card__link">
             <img src={image} alt="" className="project-card__image" />
           </a>
           <div className="project-card__title">

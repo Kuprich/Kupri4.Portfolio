@@ -1,7 +1,11 @@
 import React from "react";
+import { motion } from "framer-motion";
+
 import Sidebar from "./components/Sidebar";
+
 import Navbar from "./components/Navbar";
 import About from "./components/About";
+
 import {
   BrowserRouter as Router,
   Route,
@@ -10,6 +14,22 @@ import {
 } from "react-router-dom";
 import Resume from "./components/Resume";
 import Projects from "./components/Projects";
+
+const app_content_variant = {
+  hidden: {
+    x: "60vh",
+    opacity: 0,
+  },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      delay: 0.2,
+      duration: 0.7,
+      type: "spring",
+    },
+  },
+};
 
 function App() {
   return (
@@ -21,7 +41,12 @@ function App() {
               <Sidebar />
             </div>
             <div className="col-lg-9">
-              <div className="app__content">
+              <motion.div
+                className="app__content"
+                variants={app_content_variant}
+                initial="hidden"
+                animate="visible"
+              >
                 <Navbar />
                 <Routes>
                   <Route index path="/" element={<About />} />
@@ -29,7 +54,7 @@ function App() {
                   <Route path="projects" element={<Projects />} />
                   <Route path="*" element={<Navigate replace to="/" />} />
                 </Routes>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>

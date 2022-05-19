@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 import computer from "../assets/icons/computer.svg";
 import repair from "../assets/icons/repair.svg";
@@ -37,8 +38,25 @@ const About = () => {
     },
   ];
 
+  const about_variant = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.7,
+      },
+    },
+  };
+
   return (
-    <div className="about">
+    <motion.div
+      className="about"
+      variants={about_variant}
+      initial="hidden"
+      animate="visible"
+    >
       <div className="container">
         <div className="about__container">
           <h6 className="about__intro">
@@ -57,7 +75,7 @@ const About = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
