@@ -1,25 +1,24 @@
-import React from "react";
-import { motion } from "framer-motion";
-
-import Sidebar from "./components/Sidebar";
-
-import Navbar from "./components/Navbar";
-import About from "./components/About";
+import React from "react"
+import { motion } from "framer-motion"
+import Sidebar from "./components/Sidebar"
+import Navbar from "./components/Navbar"
+import About from "./pages/About"
+import Resume from "./pages/Resume"
+import Projects from "./pages/Projects"
 
 import {
   BrowserRouter as Router,
   Route,
   Routes,
   Navigate,
-} from "react-router-dom";
-import Resume from "./components/Resume";
-import Projects from "./components/Projects";
+} from "react-router-dom"
 
 const app_content_variant = {
   hidden: {
     x: "60vh",
     opacity: 0,
   },
+
   visible: {
     x: 0,
     opacity: 1,
@@ -29,7 +28,7 @@ const app_content_variant = {
       type: "spring",
     },
   },
-};
+}
 
 function App() {
   return (
@@ -60,7 +59,7 @@ function App() {
         </div>
       </div>
     </Router>
-  );
+  )
 }
 
-export default App;
+export default App

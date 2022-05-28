@@ -1,7 +1,7 @@
-import React from "react";
-import { motion } from "framer-motion";
-import data_projects from "./data/projects_data";
-import ProjectCard from "./ProjectCard";
+import React from "react"
+import { motion } from "framer-motion"
+import data_projects from "../components/data/projects_data"
+import ProjectCard from "../components/ProjectCard"
 
 const Projects = () => {
   const projects_variant = {
@@ -14,7 +14,7 @@ const Projects = () => {
         duration: 0.7,
       },
     },
-  };
+  }
 
   return (
     <motion.div
@@ -31,7 +31,7 @@ const Projects = () => {
         </div>
       </div>
     </motion.div>
-  );
-};
+  )
+}
 
-export default Projects;
+export default Projects

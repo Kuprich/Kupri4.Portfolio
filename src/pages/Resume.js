@@ -1,59 +1,23 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React from "react"
+import { motion } from "framer-motion"
 
-import Bar from "../components/Bar";
+import { languages, tools } from "../components/data/resume_data"
 
-import reactIcon from "../assets/icons/react.svg";
-
-const languages = [
-  {
-    icon: reactIcon,
-    name: "Python",
-    level: "45",
-  },
-  {
-    icon: reactIcon,
-    name: "Java",
-    level: "20",
-  },
-  {
-    icon: reactIcon,
-    name: "HTML",
-    level: "80",
-  },
-];
-
-const tools = [
-  {
-    icon: reactIcon,
-    name: "Figma",
-    level: "50",
-  },
-  {
-    icon: reactIcon,
-    name: "Higma",
-    level: "66",
-  },
-  {
-    icon: reactIcon,
-    name: "Photoshop",
-    level: "30",
-  },
-];
-
-const resume_variant = {
-  hidden: {
-    opacity: 0,
-  },
-  visible: {
-    opacity: 1,
-    transition: {
-      duration: 0.7,
-    },
-  },
-};
+import Bar from "../components/Bar"
 
 const Resume = () => {
+  const resume_variant = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.7,
+      },
+    },
+  }
+
   return (
     <motion.div
       className="container"
@@ -124,7 +88,7 @@ const Resume = () => {
         </div>
       </div>
     </motion.div>
-  );
-};
+  )
+}
 
-export default Resume;
+export default Resume

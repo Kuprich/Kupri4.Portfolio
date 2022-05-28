@@ -1,292 +1,370 @@
+// ================== Variables =================== //
 $sizes: (
-    "xs":320px,
-    "sm":576px,
-    "md":768px,
-    "lg":992px,
-    "xl":1200px
+  "xs": 320px,
+  "sm": 576px,
+  "md": 768px,
+  "lg": 992px,
+  "xl": 1200px,
 );
 
-@mixin media($minmax, $media) {
-
-    @each $size,
-    $resolution in $sizes {
-        @if $media ==$size {
-            @media only screen and (#{$minmax}-width: $resolution) {
-                @content;
-            }
-        }
-    }
-}
-
-@font-face {
-    font-family: "GlorySignature";
-    src: url("../fonts/GlorySignature/GlorySignature.otf");
-}
-
-@font-face {
-    font-family: "Buyan";
-    src: url("../fonts/Buyan/BuyanRegular.ttf");
-}
-
-@font-face {
-    font-family: "Outreque";
-    src: url("../fonts/Outreque/OutrequeRegular.ttf");
-}
-
-@font-face {
-    font-family: "KalyantDemo";
-    src: url("../fonts/KalyantDemo/KalyantDemoLight.otf");
-}
-
-@font-face {
-    font-family: "KalyantDemoBold";
-    src: url("../fonts/KalyantDemo/KalyantDemoBold.otf");
-}
-
+$dark-blue: #2c3b4e;
 $light-gray: #dbdddf;
-$green: #00F260;
-$blue: #0575E6;
+
+$tomato: #ed553b;
+
+$green: #00f260;
+$blue: #0575e6;
 $black: #333333;
-$dark-blue: #2d3b50;
+
+// ================== Mixins =================== //
+
+@mixin media($minmax, $media) {
+  @each $size, $resolution in $sizes {
+    @if $media ==$size {
+      @media only screen and (#{$minmax}-width: $resolution) {
+        @content;
+      }
+    }
+  }
+}
+
+// ================== Imported Fonts =================== //
+
+// @font-face {
+//   font-family: "HelveticaLight";
+//   src: url("../fonts/Helvetica/HelveticaLight.otf");
+// }
+
+// @font-face {
+//   font-family: "CaviarDreams";
+//   src: url("../fonts/CaviarDreams/CaviarDreams.ttf");
+// }
+
+// @font-face {
+//   font-family: "CaviarDreamsBold";
+//   src: url("../fonts/CaviarDreams/CaviarDreams_Bold.ttf");
+// }
+
+@font-face {
+  font-family: "Steclo";
+  src: url("../fonts/Steclo/Steclo.otf");
+}
+
+// ================== General styles =================== //
 
 a,
 a:link,
 a:visited,
 a:focus {
-    text-decoration: none;
-    color: $black;
-    transition: 0.4s;
+  text-decoration: none;
+  color: $black;
+  transition: 0.4s;
 }
 
 a:hover {
-    color: #000;
-}
-
-.bkg-gradient {
-
-    background: #00F260;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, $green, $blue);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, $green, $blue);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  color: #000;
 }
 
 body {
-    font-size: 20px;
-    font-family: "KalyantDemo";
-    color: $black;
-    background-attachment: fixed;
+  letter-spacing: 1px;
+  font-size: 20px;
+  font-family: Steclo;
+  color: $black;
+  background-attachment: fixed;
 }
-h1, h2, h3, h4, h5, h6{
-    font-family: "KalyantDemoBold";
-    font-size: 25px;
-    font-weight: 700;
-    color: $black;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 25px;
+  font-family: Steclo;
+  color: $black;
 }
 
+.btn {
+  font-size: 20px;
+  border: 1px solid;
+  &__icon {
+    padding-right: 10px;
+    transition: 0.5s;
+  }
+}
+.btn-light {
+  background-color: transparent;
+  border-color: #fff;
+  border-radius: 0;
+  color: #fff !important;
+  &:hover {
+    .btn__icon {
+      color: $tomato;
+    }
+    color: $dark-blue !important;
+  }
+}
 
+.bkg-gradient {
+  background: #00f260;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, $green, $blue);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, $green, $blue);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+// ================== App styles =================== //
 .app {
-    padding-top: 50px;
-    padding-bottom: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 
-    .sidebar,
-    &__content {
-        border-radius: 20px;
-        padding: 20px 15px;
-        background-color: #fff;
-        min-height: 90vh;
-        box-shadow: 0 0 10px #000;
+  .sidebar,
+  &__content {
+    padding: 30px 15px;
+    min-height: 90vh;
+  }
+
+  &__content {
+    margin-left: -13px;
+    @include media("max", "lg") {
+      margin-top: 30px;
     }
 
-    &__content {
-        @include media("max", "lg") {
-            margin-top: 30px;
-        }
-
-        @include media("max", "md") {
-            margin-top: 15px;
-        }
+    @include media("max", "md") {
+      margin-top: 15px;
     }
+  }
 }
+
+// ================== Sidebar styles =================== //
+
+$avatar-image: "../assets/icons/mighty-coder.jpg";
+$profile: "../assets/icons/profile.svg";
 
 .sidebar {
-    text-align: center;
+  background-color: $dark-blue;
+  text-align: center;
+  margin-right: -12px;
+  color: #fff;
 
-    &__item {
-        margin-bottom: 6px;
-        padding-top: 6px;
-        height: 40px;
-        border-radius: 30px;
-    }
+  &__icon {
+    width: 25px;
+    height: 25px;
+  }
 
-    &__icon {
-        width: 25px;
-        height: 25px;
-    }
+  &__avatar {
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: url($avatar-image);
+    height: 150px;
+    width: 150px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0px 0px 0px 6px #fff;
+  }
 
-    &__avatar {
-        width: 100px;
-        height: auto;
-    }
+  &__name {
+    font-size: 35px;
+    letter-spacing: 2px;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: -10px;
+  }
 
-    &__title {
-        background-color: $light-gray;
-        border-radius: 30px;
-    }
+  &__title {
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
 
-    &__name {
-        font-family: "KalyantDemoBold";
-        font-size: 30px;
-        color: $dark-blue;
-        span {
-            color: $green;
-        }
-    }
-
-    &__social-icons {
-        display: flex;
-        justify-content: space-around;
-    }
-
-    .contacts {
-        margin: 10px -15px;
-        background-color: $light-gray;
-    }
-
-    &__email {
-        color: #fff;
-        cursor: pointer;
-    }
-}
-
-.navbar{
-    &__active{
-        font-family: "KalyantDemoBold";
-        font-size: 2rem;
-        color: $dark-blue;
-        border-bottom: 4px solid $green;
-    }
-
-    &__items{
-        display: flex;
-    }
-
-    &__item{
-        font-size: 1.5rem;
-        margin-left: 20px;
-        text-decoration: none;
-        cursor: pointer;
-        color: $dark-blue;
-        transition: 0.4s;
-    }
-    &__item:hover{
-        color: #000;
-
-        background: #00F260;
-        /* fallback for old browsers */
-        background: -webkit-linear-gradient(to right bottom, $blue, $green);
-        /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to right bottom, $blue, $green);
-        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-        background-clip: text;
-    }
-}
-
-.about{
-
-    &__intro{
-        padding: 20px 0;
-        font-weight: normal;
-    }
-
-    &__heading{
-        font-family: "KalyantDemoBold";
-        color: $dark-blue;
-        font-size: 1.8rem;
-    }
-}
-
-.skill-cards__container{
-    background-color: $light-gray;
-    margin: 0 -39px;
-    padding: 39px;
-}
-
-.skill-card{
-    background-color: #fff;
-    margin: 10px;
-    padding: 10px;
+  &__profile {
     display: flex;
     flex-direction: row;
-    border-radius: 10px;
-    &__icon{
-        margin: 0 10px 10px 10px;
-        width: 40px;
-        height: 40px;
+    align-items: center;
+    .profile__logo {
+      padding: 5px;
+      position: relative;
+      width: 50px;
+      margin: 20px 30px 20px 17px;
     }
-    &__title{
-        font-size:20px;
+    .profile__logo::after {
+      content: "";
+      display: block;
+      border: 3px solid #fff;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      width: 50px;
+      height: 50px;
     }
-    &__content{
-        margin: 0;
-        font-size: 19px;
-        color: $dark-blue;
+    .profile__name {
+      font-size: 25px;
+      margin-right: 15px;
+      letter-spacing: 1px;
     }
-}
+    .profile__line {
+      margin-top: 4px;
+      margin-right: -15px;
+      height: 3px;
+      width: 100%;
+      background-color: #fff;
+    }
+  }
+  .profile__content {
+    margin: 0 20px 20px 32px;
+    text-align: justify;
+    letter-spacing: 1px;
+    font-size: 17px;
+    color: rgba(255, 255, 255, 0.733);
+  }
 
-.bar{
+  &__social-icons {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .contacts {
+    margin: 10px -15px;
     background-color: $light-gray;
-    border-radius: 30px;
-    &__wrapper{
-        padding: 3px 0;
-        border-radius: 30px;
-    }
-    margin: 10px 0;
+  }
 
-    &__icon{
-        margin: 0 10px;
-        width: 15px;
-        height: 15px;
-    }
-    &__name{
-        color: #fff;
-    }
+  &__email {
+    color: #fff;
+    cursor: pointer;
+  }
 }
 
-.project-card{
-    &__image{
-        width: 100%;
-        transition: .5s
-    }
-    &__image:hover{
-        border-radius: 20px;
-    }
+// ================== Navbar styles =================== //
 
-    &__link{
-        display: block;
-        border-radius: 20px;
-        cursor: pointer;
-    }
-    
-    &__title{
-        margin: 5px 0;
-        display: flex;
-        align-self: center;
-        justify-content: center;
+.navbar {
+  &__active {
+    font-size: 2rem;
+    color: $dark-blue;
+    border-bottom: 4px solid $green;
+  }
 
+  &__items {
+    display: flex;
+  }
 
-        img{
-            width: 25px;
-            margin-right: 10px;
-        }
-        img:hover{
-            border-radius: 20px;
-        }
-        p{
-            padding-top: 4px;
-            margin: 0;
-        }
+  &__item {
+    font-size: 1.5rem;
+    margin-left: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    color: $dark-blue;
+    transition: 0.4s;
+  }
+  &__item:hover {
+    color: #000;
+
+    background: #00f260;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right bottom, $blue, $green);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right bottom, $blue, $green);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-clip: text;
+  }
+}
+
+// ================== About page styles =================== //
+
+.about {
+  &__intro {
+    padding: 20px 0;
+    font-weight: normal;
+  }
+
+  &__heading {
+    color: $dark-blue;
+    font-size: 1.8rem;
+  }
+}
+
+.skill-cards__container {
+  background-color: $light-gray;
+  margin: 0 -39px;
+  padding: 39px;
+}
+
+.skill-card {
+  background-color: #fff;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  border-radius: 10px;
+  &__icon {
+    margin: 0 10px 10px 10px;
+    width: 40px;
+    height: 40px;
+  }
+  &__title {
+    font-size: 20px;
+  }
+  &__content {
+    margin: 0;
+    font-size: 19px;
+    color: $dark-blue;
+  }
+}
+
+// ================== Resume page styles =================== //
+
+.bar {
+  background-color: $light-gray;
+  border-radius: 30px;
+  &__wrapper {
+    padding: 3px 0;
+    border-radius: 30px;
+  }
+  margin: 10px 0;
+
+  &__icon {
+    margin: 0 10px;
+    width: 15px;
+    height: 15px;
+  }
+  &__name {
+    color: #fff;
+  }
+}
+
+// ================== Projects page styles =================== //
+
+.project-card {
+  &__image {
+    width: 100%;
+    transition: 0.5s;
+  }
+  &__image:hover {
+    border-radius: 20px;
+  }
+
+  &__link {
+    display: block;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+
+  &__title {
+    margin: 5px 0;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+
+    img {
+      width: 25px;
+      margin-right: 10px;
     }
+    img:hover {
+      border-radius: 20px;
+    }
+    p {
+      padding-top: 4px;
+      margin: 0;
+    }
+  }
 }
