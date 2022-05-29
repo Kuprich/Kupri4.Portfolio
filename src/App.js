@@ -39,7 +39,7 @@ function App() {
             <div className="col-lg-3">
               <Sidebar />
             </div>
-            <div className="col-lg-9">
+            <div className="col-lg-9 d-flex align-items-stretch">
               <motion.div
                 className="app__content"
                 variants={app_content_variant}

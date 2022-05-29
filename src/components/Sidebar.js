@@ -1,17 +1,24 @@
 import { motion } from "framer-motion"
-import myghtycoder from "../assets/icons/mighty-coder.jpg"
-
-import tie from "../assets/icons/tie.svg"
-import facebook from "../assets/icons/facebook.svg"
-import instagramm from "../assets/icons/instagram.svg"
-import github from "../assets/icons/github.svg"
-import pin from "../assets/icons/pin.svg"
 import resume from "../assets/resume.pdf"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+
 import {
   faAddressCard,
+  faEnvelope,
   faFileArrowDown,
+  faLocationDot,
+  faMobileRetro,
+  faShareNodes,
 } from "@fortawesome/free-solid-svg-icons"
+import {
+  faDiscord,
+  faGithub,
+  faSkype,
+  faTelegram,
+  faVk,
+  faWhatsapp,
+} from "@fortawesome/free-brands-svg-icons"
+import { faEnvelopeOpen } from "@fortawesome/free-regular-svg-icons"
 
 const Sidebar = () => {
   const handleEmailMe = () => {
@@ -45,54 +52,105 @@ const Sidebar = () => {
       <div className="sidebar__name">
         Илья <span>Куприянов</span>
       </div>
-      <div className="sidebar__item sidebar__title">
+      <div className=" sidebar__title">
         C<span>#</span> Разработчик
       </div>
 
-      <div className="sidebar__profile">
-        <div className="profile__logo">
+      <div className="location">
+        <span className="location__icon">
+          <FontAwesomeIcon icon={faLocationDot} />
+        </span>
+        <span>Зубова Поляна, Мордовия</span>
+      </div>
+
+      <div className="sidebar__unit">
+        <div className="unit__logo">
           <FontAwesomeIcon icon={faAddressCard} />
         </div>
-        <div className="profile__name">Профиль</div>
-        <div className="profile__line"></div>
+        <div className="unit__name">Профиль</div>
+        <div className="unit__line"></div>
       </div>
-      <div className="profile__content">
-        Перейдя по ссылке ниже Вы можете скачать и ознакомиться c моим резюме.
+      <div className="unit__descr">
+        Перейдя по ссылке ниже Вы можете скачать и ознакомиться c моим{" "}
+        <span>резюме</span>.
       </div>
 
-      <a href={resume} download="resume.pdf" className="btn btn-light">
-        <div className="sidebar__item">
-          <span className="btn__icon">
-            <FontAwesomeIcon icon={faFileArrowDown} />
-          </span>
-          Скачать резюме
+      <div className="sidebar__btns-container">
+        <a href={resume} download="resume.pdf" className="btn btn-light">
+          <div className="">
+            <span className="btn__icon">
+              <FontAwesomeIcon icon={faFileArrowDown} />
+            </span>
+            Скачать резюме
+          </div>
+        </a>
+
+        <a href="https://github.com/Kuprich" className="btn btn-light">
+          <div className="">
+            <span className="btn__icon">
+              <FontAwesomeIcon icon={faGithub} />
+            </span>
+            Профиль GitHub
+          </div>
+        </a>
+      </div>
+
+      <div className="sidebar__unit">
+        <div className="unit__logo">
+          <FontAwesomeIcon icon={faShareNodes} />
         </div>
-      </a>
-      <figure className="sidebar__social-icons sidebar__item">
-        <a href="https://facebook.com">
-          <img src={facebook} alt="facebook" className="sidebar__icon" />
+        <div className="unit__name">Контакты</div>
+        <div className="unit__line"></div>
+      </div>
+      <div className="unit__descr">
+        Вы можете найти меня в{" "}
+        <a href="https://vk.com/id_223377" target="_blank">
+          <FontAwesomeIcon icon={faVk} className="link-icon" />
+          Вконтакте
         </a>
-        <a href="https://facebook.com">
-          <img src={instagramm} alt="instagramm" className="sidebar__icon" />
+        , написать на почту, или же связяться co мной по <span>телефону</span>
+      </div>
+
+      <figure className="sidebar__social-icons">
+        <a href="https://join.skype.com/invite/iyrg4pvmO58v" target="_blank">
+          <FontAwesomeIcon icon={faSkype} />
         </a>
-        <a href="https://facebook.com">
-          <img src={github} alt="github" className="sidebar__icon" />
+        <a href="https://t.me/Kupri4" target="_blank">
+          <FontAwesomeIcon icon={faTelegram} />
+        </a>
+        <a href="https://wa.me/79176983633" target="_blank">
+          <FontAwesomeIcon icon={faWhatsapp} />
+        </a>
+        <a href="" target="_blank">
+          <FontAwesomeIcon icon={faDiscord} />
         </a>
       </figure>
+
       <div className="contacts">
-        <div className="sidebar__location sidebar__item">
-          <img src={pin} alt="location" className="sidebar__icon" />
-          Зубова Поляна, Мордовия
+        <div className="contacts__phone contacts__item">
+          <span className="contacts__icon">
+            <FontAwesomeIcon icon={faMobileRetro} />
+          </span>
+          <span>+7 (999) 888 77-66</span>
         </div>
 
-        <div className="sidebar__item">ilya-kyp@yandex.ru</div>
-        <div className="sidebar__item">+7 (999) 888 77-66</div>
+        <div className=" contacts__mail contacts__item">
+          <span className="contacts__icon">
+            <FontAwesomeIcon icon={faEnvelope} />
+          </span>
+          <span>ilya-kyp@yandex.ru</span>
+        </div>
       </div>
-      <div
-        className="sidebar__item sidebar__email bkg-gradient"
-        onClick={handleEmailMe}
-      >
-        Написать мне
+
+      <div className="sidebar__btns-container mt-4">
+        <a className="btn btn-light " onClick={handleEmailMe}>
+          <div>
+            <span className="btn__icon">
+              <FontAwesomeIcon icon={faEnvelopeOpen} />
+            </span>
+            Написать мне
+          </div>
+        </a>
       </div>
     </motion.div>
   )

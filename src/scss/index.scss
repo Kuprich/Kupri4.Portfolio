@@ -8,7 +8,7 @@ $sizes: (
 );
 
 $dark-blue: #2c3b4e;
-$light-gray: #dbdddf;
+$light-gray: #c9c9c9;
 
 $tomato: #ed553b;
 
@@ -28,23 +28,7 @@ $black: #333333;
   }
 }
 
-// ================== Imported Fonts =================== //
-
-// @font-face {
-//   font-family: "HelveticaLight";
-//   src: url("../fonts/Helvetica/HelveticaLight.otf");
-// }
-
-// @font-face {
-//   font-family: "CaviarDreams";
-//   src: url("../fonts/CaviarDreams/CaviarDreams.ttf");
-// }
-
-// @font-face {
-//   font-family: "CaviarDreamsBold";
-//   src: url("../fonts/CaviarDreams/CaviarDreams_Bold.ttf");
-// }
-
+// ================== Included Fonts  =================== //
 @font-face {
   font-family: "Steclo";
   src: url("../fonts/Steclo/Steclo.otf");
@@ -70,7 +54,11 @@ body {
   font-size: 20px;
   font-family: Steclo;
   color: $black;
+  background: url("../assets/bkg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   background-attachment: fixed;
+  backdrop-filter: blur(15px) brightness(50%);
 }
 h1,
 h2,
@@ -114,6 +102,7 @@ h6 {
 }
 
 // ================== App styles =================== //
+
 .app {
   padding-top: 50px;
   padding-bottom: 50px;
@@ -121,11 +110,22 @@ h6 {
   .sidebar,
   &__content {
     padding: 30px 15px;
-    min-height: 90vh;
+    box-shadow: 16px 20px 30px rgba(0, 0, 0, 0.6),
+      16px -20px 30px rgba(0, 0, 0, 0.6);
   }
 
+  .sidebar {
+    box-shadow: -16px 20px 30px rgba(0, 0, 0, 0.6),
+      -16px -20px 30px rgba(0, 0, 0, 0.6);
+  }
+
+  // 0px 8px 10px gray,
+  // -10px 8px 15px gray,
+  // 10px 8px 15px gray;
+
   &__content {
-    margin-left: -13px;
+    margin-left: -12px;
+    background-color: #e1e2e6;
     @include media("max", "lg") {
       margin-top: 30px;
     }
@@ -177,17 +177,18 @@ $profile: "../assets/icons/profile.svg";
     letter-spacing: 2px;
   }
 
-  &__profile {
+  &__unit {
+    margin: 15px 0;
     display: flex;
     flex-direction: row;
     align-items: center;
-    .profile__logo {
+    .unit__logo {
       padding: 5px;
       position: relative;
       width: 50px;
       margin: 20px 30px 20px 17px;
     }
-    .profile__logo::after {
+    .unit__logo::after {
       content: "";
       display: block;
       border: 3px solid #fff;
@@ -198,12 +199,12 @@ $profile: "../assets/icons/profile.svg";
       width: 50px;
       height: 50px;
     }
-    .profile__name {
+    .unit__name {
       font-size: 25px;
       margin-right: 15px;
       letter-spacing: 1px;
     }
-    .profile__line {
+    .unit__line {
       margin-top: 4px;
       margin-right: -15px;
       height: 3px;
@@ -211,22 +212,74 @@ $profile: "../assets/icons/profile.svg";
       background-color: #fff;
     }
   }
-  .profile__content {
-    margin: 0 20px 20px 32px;
+  .unit__descr {
+    margin: 0 32px 20px 32px;
     text-align: justify;
     letter-spacing: 1px;
     font-size: 17px;
-    color: rgba(255, 255, 255, 0.733);
+    color: $light-gray;
+    a {
+      font-weight: bold;
+      display: inline-block;
+      color: #fff;
+      .link-icon {
+        margin-right: 5px;
+      }
+    }
+  }
+
+  &__btns-container {
+    display: flex;
+    flex-direction: column;
+    .btn {
+      margin: 10px 30px;
+    }
   }
 
   &__social-icons {
+    a {
+      color: #fff;
+    }
     display: flex;
     justify-content: space-around;
   }
 
   .contacts {
-    margin: 10px -15px;
-    background-color: $light-gray;
+    margin: 10px;
+    font-size: 17px;
+    letter-spacing: 1px;
+    &__item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &__icon {
+      margin-right: 5px;
+      font-size: 15px;
+    }
+    &__phone {
+      font-size: 25px;
+      margin: 10px 0 -2px;
+      letter-spacing: 2px;
+      font-weight: bold;
+      .contacts__icon {
+        font-size: 20px;
+      }
+    }
+    &__mail {
+      color: $light-gray;
+      margin-bottom: -10px;
+    }
+  }
+
+  .location {
+    font-size: 17px;
+    font-weight: bold;
+    color: $light-gray;
+    margin: 10px 0;
+    &__icon {
+      margin-right: 5px;
+    }
   }
 
   &__email {
