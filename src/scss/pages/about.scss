@@ -1,0 +1,103 @@
+// ================== About page styles =================== //
+
+.about {
+  &__intro {
+    font-size: 20px;
+    padding-top: 15px;
+    font-weight: normal;
+  }
+  &__article {
+    display: flex;
+    color: $dark-blue;
+    .article__left-side {
+      margin-right: 15px;
+      padding-right: 15px;
+      border-right: 1px solid $light-gray;
+      text-align: right;
+      justify-content: right;
+      flex-shrink: 0;
+      width: 195px;
+      .left-side__months {
+        font-size: 11px;
+        font-weight: 400;
+        margin-bottom: -10px;
+        text-transform: uppercase;
+        &__from,
+        &__to {
+          display: inline-block;
+          width: 62px;
+          text-align: center;
+        }
+        &__from {
+          display: inline-block;
+        }
+        &__to {
+          margin-left: 24px;
+          display: inline-block;
+        }
+      }
+      .left-side__years {
+        font-size: 30px;
+        font-weight: bold;
+        position: relative;
+        padding-bottom: 20px;
+        &::after {
+          position: absolute;
+          content: "";
+          display: block;
+          right: 0;
+          bottom: 12px;
+          width: 120px;
+          height: 1px;
+          background-color: $light-gray;
+        }
+      }
+      .left-side__title {
+        font-size: 16px;
+        font-weight: 400;
+      }
+    }
+    .article__right-side {
+      .right-side__title {
+        font-size: 18px;
+        font-weight: 700;
+      }
+      .right-side__descr {
+        font-size: 20px;
+      }
+    }
+  }
+
+  &__heading {
+    color: $dark-blue;
+    font-size: 1.8rem;
+  }
+}
+
+.skill-cards__container {
+  background-color: $light-gray;
+  margin: 0 -39px;
+  padding: 39px;
+}
+
+.skill-card {
+  background-color: #fff;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  border-radius: 10px;
+  &__icon {
+    margin: 0 10px 10px 10px;
+    width: 40px;
+    height: 40px;
+  }
+  &__title {
+    font-size: 20px;
+  }
+  &__content {
+    margin: 0;
+    font-size: 19px;
+    color: $dark-blue;
+  }
+}

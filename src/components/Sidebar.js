@@ -63,14 +63,14 @@ const Sidebar = () => {
         <span>Зубова Поляна, Мордовия</span>
       </div>
 
-      <div className="sidebar__unit">
+      <div className="unit unit_dark-bkg">
         <div className="unit__logo">
           <FontAwesomeIcon icon={faAddressCard} />
         </div>
         <div className="unit__name">Профиль</div>
         <div className="unit__line"></div>
       </div>
-      <div className="unit__descr">
+      <div className="sidebar__descr">
         Перейдя по ссылке ниже Вы можете скачать и ознакомиться c моим{" "}
         <span>резюме</span>.
       </div>
@@ -95,14 +95,15 @@ const Sidebar = () => {
         </a>
       </div>
 
-      <div className="sidebar__unit">
+      <div className="unit">
         <div className="unit__logo">
           <FontAwesomeIcon icon={faShareNodes} />
         </div>
         <div className="unit__name">Контакты</div>
         <div className="unit__line"></div>
       </div>
-      <div className="unit__descr">
+
+      <div className="sidebar__descr">
         Вы можете найти меня в{" "}
         <a href="https://vk.com/id_223377" target="_blank">
           <FontAwesomeIcon icon={faVk} className="link-icon" />

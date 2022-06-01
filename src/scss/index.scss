@@ -1,38 +1,8 @@
-// ================== Variables =================== //
-$sizes: (
-  "xs": 320px,
-  "sm": 576px,
-  "md": 768px,
-  "lg": 992px,
-  "xl": 1200px,
-);
-
-$dark-blue: #2c3b4e;
-$light-gray: #c9c9c9;
-
-$tomato: #ed553b;
-
-$green: #00f260;
-$blue: #0575e6;
-$black: #333333;
-
-// ================== Mixins =================== //
-
-@mixin media($minmax, $media) {
-  @each $size, $resolution in $sizes {
-    @if $media ==$size {
-      @media only screen and (#{$minmax}-width: $resolution) {
-        @content;
-      }
-    }
-  }
-}
-
-// ================== Included Fonts  =================== //
-@font-face {
-  font-family: "Steclo";
-  src: url("../fonts/Steclo/Steclo.otf");
-}
+@import "variables";
+@import "mixins";
+@import "fonts";
+@import "sidebar";
+@import "pages/about.scss";
 
 // ================== General styles =================== //
 
@@ -52,13 +22,15 @@ a:hover {
 body {
   letter-spacing: 1px;
   font-size: 20px;
-  font-family: Steclo;
+  font-family: "RobotoCondenced";
   color: $black;
   background: url("../assets/bkg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
   backdrop-filter: blur(15px) brightness(50%);
+  letter-spacing: 0 !important;
+  font-weight: 200;
 }
 h1,
 h2,
@@ -67,12 +39,14 @@ h4,
 h5,
 h6 {
   font-size: 25px;
-  font-family: Steclo;
+  font-family: "RobotoCondenced";
   color: $black;
 }
 
 .btn {
-  font-size: 20px;
+  text-transform: uppercase;
+  font-size: 17px;
+  font-weight: 300;
   border: 1px solid;
   &__icon {
     padding-right: 10px;
@@ -101,6 +75,78 @@ h6 {
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+.unit {
+  margin: 5px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  .unit__logo {
+    font-size: 15px;
+    padding: 5px;
+    position: relative;
+    width: 40px;
+    margin: 20px 30px 20px 0;
+  }
+  .unit__logo::after {
+    content: "";
+    display: block;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 40px;
+    height: 40px;
+  }
+  .unit__name {
+    font-size: 20px;
+    margin-right: 15px;
+    letter-spacing: 1px;
+    flex-shrink: 0;
+    font-weight: 300 !important;
+  }
+  .unit__line {
+    margin-top: 4px;
+    margin-right: -15px;
+    height: 1px;
+    width: 100%;
+    background-color: #fff;
+  }
+}
+
+.unit.unit_dark-bkg {
+  color: #fff;
+  .unit__logo {
+    color: #fff;
+  }
+  .unit__logo::after {
+    border-color: #fff;
+  }
+  .unit__line {
+    background-color: #fff;
+  }
+}
+
+.unit.unit_light-bkg {
+  color: $dark-blue;
+  .unit__logo {
+    color: $dark-blue;
+    transform-style: preserve-3d;
+  }
+  .unit__logo::after {
+    transform: translate(-50%, -50%) rotate(45deg) translateZ(-1px);
+    border-color: $dark-blue;
+    background-color: #fff;
+  }
+  .unit__name {
+    color: $dark-blue;
+  }
+  .unit__line {
+    background-color: $dark-blue;
+  }
+}
+
 // ================== App styles =================== //
 
 .app {
@@ -119,10 +165,6 @@ h6 {
       -16px -20px 30px rgba(0, 0, 0, 0.6);
   }
 
-  // 0px 8px 10px gray,
-  // -10px 8px 15px gray,
-  // 10px 8px 15px gray;
-
   &__content {
     margin-left: -12px;
     background-color: #e1e2e6;
@@ -136,163 +178,11 @@ h6 {
   }
 }
 
-// ================== Sidebar styles =================== //
-
-$avatar-image: "../assets/icons/mighty-coder.jpg";
-$profile: "../assets/icons/profile.svg";
-
-.sidebar {
-  background-color: $dark-blue;
-  text-align: center;
-  margin-right: -12px;
-  color: #fff;
-
-  &__icon {
-    width: 25px;
-    height: 25px;
-  }
-
-  &__avatar {
-    margin: 0 auto 20px;
-    border-radius: 50%;
-    background: url($avatar-image);
-    height: 150px;
-    width: 150px;
-    background-size: cover;
-    background-position: center;
-    box-shadow: 0px 0px 0px 6px #fff;
-  }
-
-  &__name {
-    font-size: 35px;
-    letter-spacing: 2px;
-    color: #fff;
-    text-transform: uppercase;
-    margin-bottom: -10px;
-  }
-
-  &__title {
-    font-size: 15px;
-    font-weight: bold;
-    letter-spacing: 2px;
-  }
-
-  &__unit {
-    margin: 15px 0;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    .unit__logo {
-      padding: 5px;
-      position: relative;
-      width: 50px;
-      margin: 20px 30px 20px 17px;
-    }
-    .unit__logo::after {
-      content: "";
-      display: block;
-      border: 3px solid #fff;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) rotate(45deg);
-      width: 50px;
-      height: 50px;
-    }
-    .unit__name {
-      font-size: 25px;
-      margin-right: 15px;
-      letter-spacing: 1px;
-    }
-    .unit__line {
-      margin-top: 4px;
-      margin-right: -15px;
-      height: 3px;
-      width: 100%;
-      background-color: #fff;
-    }
-  }
-  .unit__descr {
-    margin: 0 32px 20px 32px;
-    text-align: justify;
-    letter-spacing: 1px;
-    font-size: 17px;
-    color: $light-gray;
-    a {
-      font-weight: bold;
-      display: inline-block;
-      color: #fff;
-      .link-icon {
-        margin-right: 5px;
-      }
-    }
-  }
-
-  &__btns-container {
-    display: flex;
-    flex-direction: column;
-    .btn {
-      margin: 10px 30px;
-    }
-  }
-
-  &__social-icons {
-    a {
-      color: #fff;
-    }
-    display: flex;
-    justify-content: space-around;
-  }
-
-  .contacts {
-    margin: 10px;
-    font-size: 17px;
-    letter-spacing: 1px;
-    &__item {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    &__icon {
-      margin-right: 5px;
-      font-size: 15px;
-    }
-    &__phone {
-      font-size: 25px;
-      margin: 10px 0 -2px;
-      letter-spacing: 2px;
-      font-weight: bold;
-      .contacts__icon {
-        font-size: 20px;
-      }
-    }
-    &__mail {
-      color: $light-gray;
-      margin-bottom: -10px;
-    }
-  }
-
-  .location {
-    font-size: 17px;
-    font-weight: bold;
-    color: $light-gray;
-    margin: 10px 0;
-    &__icon {
-      margin-right: 5px;
-    }
-  }
-
-  &__email {
-    color: #fff;
-    cursor: pointer;
-  }
-}
-
 // ================== Navbar styles =================== //
 
 .navbar {
   &__active {
-    font-size: 2rem;
+    font-size: 25px;
     color: $dark-blue;
     border-bottom: 4px solid $green;
   }
@@ -302,7 +192,7 @@ $profile: "../assets/icons/profile.svg";
   }
 
   &__item {
-    font-size: 1.5rem;
+    font-size: 20px;
     margin-left: 20px;
     text-decoration: none;
     cursor: pointer;
@@ -319,48 +209,6 @@ $profile: "../assets/icons/profile.svg";
     background: linear-gradient(to right bottom, $blue, $green);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background-clip: text;
-  }
-}
-
-// ================== About page styles =================== //
-
-.about {
-  &__intro {
-    padding: 20px 0;
-    font-weight: normal;
-  }
-
-  &__heading {
-    color: $dark-blue;
-    font-size: 1.8rem;
-  }
-}
-
-.skill-cards__container {
-  background-color: $light-gray;
-  margin: 0 -39px;
-  padding: 39px;
-}
-
-.skill-card {
-  background-color: #fff;
-  margin: 10px;
-  padding: 10px;
-  display: flex;
-  flex-direction: row;
-  border-radius: 10px;
-  &__icon {
-    margin: 0 10px 10px 10px;
-    width: 40px;
-    height: 40px;
-  }
-  &__title {
-    font-size: 20px;
-  }
-  &__content {
-    margin: 0;
-    font-size: 19px;
-    color: $dark-blue;
   }
 }
 

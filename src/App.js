@@ -36,7 +36,7 @@ function App() {
       <div className="app">
         <div className="container">
           <div className="row">
-            <div className="col-lg-3">
+            <div className="col-lg-3 d-flex align-items-stretch">
               <Sidebar />
             </div>
             <div className="col-lg-9 d-flex align-items-stretch">

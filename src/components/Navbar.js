@@ -1,20 +1,26 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import React, { useState, useEffect } from "react"
+import { Link } from "react-router-dom"
+import { motion } from "framer-motion"
 
 const Navbar = () => {
-  const [active, setActive] = useState("About");
+  const navbarItems = {
+    about: "ОБО МНЕ",
+    resume: "РЕЗЮМЕ",
+    projects: "ПРОЕКТЫ",
+  }
+
+  const [active, setActive] = useState(navbarItems.about)
 
   useEffect(() => {
-    let currentUrl = window.location.href;
+    let currentUrl = window.location.href
     if (currentUrl.endsWith("/")) {
-      setActive("About");
+      setActive(navbarItems.about)
     } else if (currentUrl.endsWith("/resume")) {
-      setActive("Resume");
+      setActive(navbarItems.resume)
     } else if (currentUrl.endsWith("/projects")) {
-      setActive("Projects");
+      setActive(navbarItems.projects)
     }
-  }, [active]);
+  }, [active])
 
   const navbar_variant = {
     hidden: {
@@ -25,7 +31,7 @@ const Navbar = () => {
       y: 0,
       opacity: 1,
     },
-  };
+  }
 
   return (
     <motion.div
@@ -37,32 +43,41 @@ const Navbar = () => {
       <div className="navbar__active">{active}</div>
 
       <div className="navbar__items">
-        {active !== "About" && (
+        {active !== navbarItems.about && (
           <Link to="/">
-            <div className="navbar__item" onClick={() => setActive("About")}>
-              About
+            <div
+              className="navbar__item"
+              onClick={() => setActive(navbarItems.about)}
+            >
+              {navbarItems.about}
             </div>
           </Link>
         )}
 
-        {active !== "Resume" ? (
+        {active !== navbarItems.resume ? (
           <Link to="/resume">
-            <div className="navbar__item" onClick={() => setActive("Resume")}>
-              Resume
+            <div
+              className="navbar__item"
+              onClick={() => setActive(navbarItems.resume)}
+            >
+              РЕЗЮМЕ
             </div>
           </Link>
         ) : null}
 
-        {active !== "Projects" && (
+        {active !== navbarItems.projects && (
           <Link to="/projects">
-            <div className="navbar__item" onClick={() => setActive("Projects")}>
-              Projects
+            <div
+              className="navbar__item"
+              onClick={() => setActive(navbarItems.projects)}
+            >
+              ПРОЕКТЫ
             </div>
           </Link>
         )}
       </div>
     </motion.div>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar
