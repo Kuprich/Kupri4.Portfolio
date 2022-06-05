@@ -52,7 +52,8 @@ const Sidebar = () => {
       <div className="sidebar__name">
         Илья <span>Куприянов</span>
       </div>
-      <div className=" sidebar__title">
+      <div className="sidebar__birthdate">25 лет (24.07.1996)</div>
+      <div className="sidebar__title">
         C<span>#</span> Разработчик
       </div>
 
@@ -76,18 +77,18 @@ const Sidebar = () => {
       </div>
 
       <div className="sidebar__btns-container">
-        <a href={resume} download="resume.pdf" className="btn btn-light">
+        <a href={resume} download="resume.pdf" className="button button-light">
           <div className="">
-            <span className="btn__icon">
+            <span className="button__icon">
               <FontAwesomeIcon icon={faFileArrowDown} />
             </span>
             Скачать резюме
           </div>
         </a>
 
-        <a href="https://github.com/Kuprich" className="btn btn-light">
+        <a href="https://github.com/Kuprich" className="button button-light">
           <div className="">
-            <span className="btn__icon">
+            <span className="button__icon">
               <FontAwesomeIcon icon={faGithub} />
             </span>
             Профиль GitHub
@@ -144,9 +145,9 @@ const Sidebar = () => {
       </div>
 
       <div className="sidebar__btns-container mt-4">
-        <a className="btn btn-light " onClick={handleEmailMe}>
+        <a className="button button-light " onClick={handleEmailMe}>
           <div>
-            <span className="btn__icon">
+            <span className="button__icon">
               <FontAwesomeIcon icon={faEnvelopeOpen} />
             </span>
             Написать мне

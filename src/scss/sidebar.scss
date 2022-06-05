@@ -31,6 +31,10 @@ $profile: "../assets/icons/profile.svg";
     text-transform: uppercase;
     margin-bottom: 0px;
   }
+  &__birthdate {
+    font-size: 17px;
+    padding-bottom: 3px;
+  }
 
   &__title {
     font-size: 15px;
@@ -69,7 +73,7 @@ $profile: "../assets/icons/profile.svg";
   &__btns-container {
     display: flex;
     flex-direction: column;
-    .btn {
+    .button {
       margin: 10px 30px;
     }
   }

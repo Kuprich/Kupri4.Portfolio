@@ -1,4 +1,9 @@
 // ================== About page styles =================== //
+.about {
+  .unit__logo {
+    padding-left: 5px;
+  }
+}
 
 .about {
   &__intro {
@@ -10,17 +15,31 @@
     display: flex;
     color: $dark-blue;
     .article__left-side {
+      margin: 20px 15px 0 0;
       margin-right: 15px;
+      margin-top: 30px;
       padding-right: 15px;
       border-right: 1px solid $light-gray;
       text-align: right;
       justify-content: right;
       flex-shrink: 0;
       width: 195px;
+      position: relative;
+      &:after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: $light-gray;
+        top: -20px;
+        right: -5px;
+        border-radius: 50%;
+      }
+
       .left-side__months {
         font-size: 11px;
         font-weight: 400;
-        margin-bottom: -10px;
+        margin: -29px 0 -10px 0;
         text-transform: uppercase;
         &__from,
         &__to {
@@ -54,7 +73,12 @@
       }
       .left-side__title {
         font-size: 16px;
-        font-weight: 400;
+        font-weight: 700;
+      }
+      .left-side__descr {
+        font-style: italic;
+        margin-top: 5px;
+        font-size: 17px;
       }
     }
     .article__right-side {
@@ -81,23 +105,21 @@
 }
 
 .skill-card {
-  background-color: #fff;
-  margin: 10px;
-  padding: 10px;
-  display: flex;
-  flex-direction: row;
-  border-radius: 10px;
-  &__icon {
-    margin: 0 10px 10px 10px;
-    width: 40px;
-    height: 40px;
+  &:first-child {
+    padding-top: 0;
   }
+  width: 100%;
+  padding: 8px 20px;
   &__title {
-    font-size: 20px;
+    font-size: 15px;
   }
-  &__content {
-    margin: 0;
-    font-size: 19px;
-    color: $dark-blue;
+  &__bar {
+    background-color: #fff;
+    width: 100%;
+    height: 7px;
+  }
+  &__bar_fill {
+    background-color: $dark-blue;
+    height: 100%;
   }
 }

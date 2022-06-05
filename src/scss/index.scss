@@ -43,26 +43,34 @@ h6 {
   color: $black;
 }
 
-.btn {
+.button {
   text-transform: uppercase;
   font-size: 17px;
   font-weight: 300;
   border: 1px solid;
+  padding: 7px 10px;
+  transition: 0.5s !important;
+  background-color: transparent;
+  cursor: pointer;
+  &:hover {
+    background-color: #fff;
+    color: $dark-blue !important;
+  }
   &__icon {
     padding-right: 10px;
     transition: 0.5s;
   }
 }
-.btn-light {
+.button-light {
   background-color: transparent;
   border-color: #fff;
   border-radius: 0;
   color: #fff !important;
   &:hover {
-    .btn__icon {
+    .button__icon {
       color: $tomato;
     }
-    color: $dark-blue !important;
+    color: $dark-blue;
   }
 }
 
@@ -81,11 +89,10 @@ h6 {
   flex-direction: row;
   align-items: center;
   .unit__logo {
-    font-size: 15px;
-    padding: 5px;
+    font-size: 19px;
     position: relative;
     width: 40px;
-    margin: 20px 30px 20px 0;
+    margin: 20px 30px 20px 5px;
   }
   .unit__logo::after {
     content: "";
@@ -184,7 +191,7 @@ h6 {
   &__active {
     font-size: 25px;
     color: $dark-blue;
-    border-bottom: 4px solid $green;
+    border-bottom: 1px solid $dark-blue;
   }
 
   &__items {
@@ -201,14 +208,6 @@ h6 {
   }
   &__item:hover {
     color: #000;
-
-    background: #00f260;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right bottom, $blue, $green);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right bottom, $blue, $green);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background-clip: text;
   }
 }
 
