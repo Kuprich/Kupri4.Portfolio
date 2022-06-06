@@ -1,12 +1,15 @@
 import React from "react"
 
-const Skillcard = ({ skill: { icon, title, content } }) => {
+const Skillcard = ({ title, value }) => {
+  console.log(value)
   return (
     <div className="skill-card">
-      <img src={icon} alt="skill icon" className="skill-card__icon" />
       <h6 className="skill-card__title">{title}</h6>
       <div className="skill-card__bar">
-        <div className="skill-card__bar_fill"></div>
+        <div
+          className="skill-card__bar_fill"
+          style={{ width: value + "%" }}
+        ></div>
       </div>
     </div>
   )

@@ -15,3 +15,9 @@ $tomato: #ed553b;
 $green: #00f260;
 $blue: #0575e6;
 $black: #333333;
+
+:export {
+  darkBlue: $dark-blue;
+  tomato: $tomato;
+  lightGray: $light-gray;
+}
