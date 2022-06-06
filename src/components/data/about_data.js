@@ -1,39 +1,39 @@
-import computer from "../../assets/icons/computer.svg";
-import repair from "../../assets/icons/repair.svg";
-import api from "../../assets/icons/api.svg";
-import algo from "../../assets/icons/algo.svg";
-import puzzle from "../../assets/icons/puzzle.svg";
+import computer from "../../assets/icons/computer.svg"
+import repair from "../../assets/icons/repair.svg"
+import api from "../../assets/icons/api.svg"
+import algo from "../../assets/icons/algo.svg"
+import puzzle from "../../assets/icons/puzzle.svg"
 
-const skills = [
+export const Skills = [
   {
-    icon: computer,
-    title: "Frontend Development",
-    content: [
-      "I can build a beautiful and scalable",
-      <b>SPA</b>,
-      "  using HTML, CSS and Ract.js",
-    ],
+    title: "С#",
+    value: 70,
   },
   {
-    icon: repair,
-    title: "Backend Development",
-    content: "Handle database, server, api using and SQLite",
+    title: "ASP.NET Core, Blazor",
+    value: 50,
   },
   {
-    icon: api,
-    title: "API Development",
-    content: "I can develop robust REST API using django-rest-api",
+    title: "HTML/CSS (SCSS)",
+    value: 80,
   },
   {
-    icon: algo,
-    title: "Competitive Coder",
-    content: "A daily problem solver in HackerRank and Leetcode",
+    title: "JS (React, JQuery)",
+    value: 50,
   },
-  {
-    icon: puzzle,
-    title: "UI/UX designer",
-    content: "Minimalistic user interface using figma and framer",
-  },
-];
+]
 
-export default skills;
+export const CircleSkills = [
+  {
+    title: "Обучаемость",
+    value: 50,
+  },
+  {
+    title: "Креативность",
+    value: 70,
+  },
+  {
+    title: "Английский",
+    value: 20,
+  },
+]

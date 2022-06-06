@@ -1,14 +1,16 @@
 import React from "react"
 import { motion } from "framer-motion"
-import skills from "../components/data/about_data"
-import Skillcard from "../components/Skillcard"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { CircleSkills, Skills } from "../components/data/about_data"
+
 import {
   faBrain,
   faBriefcase,
   faGraduationCap,
-  faShareNodes,
 } from "@fortawesome/free-solid-svg-icons"
+import CircleSkillCard from "../components/CircleSkillCard"
+import Skillcard from "../components/Skillcard"
+import { buildStyles, CircularProgressbar } from "react-circular-progressbar"
 
 const About = () => {
   const about_variant = {
@@ -30,11 +32,6 @@ const About = () => {
       initial="hidden"
       animate="visible"
     >
-      <h6 className="about__intro">
-        Приветствую Вас на моей странице, Меня зовут Илья и я почти профешинал
-        C# программист.
-      </h6>
-
       <div className="container">
         <div className="about__container">
           <div className="unit unit_light-bkg">
@@ -139,57 +136,14 @@ const About = () => {
 
           <div className="row">
             <div className="col-5 d-flex align-items-stretch flex-column">
-              <div className="skill-card">
-                <h6 className="skill-card__title">C#</h6>
-                <div className="skill-card__bar">
-                  <div
-                    className="skill-card__bar_fill"
-                    style={{ width: "70%" }}
-                  ></div>
-                </div>
-              </div>
-              <div className="skill-card">
-                <h6 className="skill-card__title">ASP.NET Core</h6>
-                <div className="skill-card__bar">
-                  <div
-                    className="skill-card__bar_fill"
-                    style={{ width: "70%" }}
-                  ></div>
-                </div>
-              </div>
-
-              <div className="skill-card">
-                <h6 className="skill-card__title">Blazor</h6>
-                <div className="skill-card__bar">
-                  <div
-                    className="skill-card__bar_fill"
-                    style={{ width: "70%" }}
-                  ></div>
-                </div>
-              </div>
-
-              <div className="skill-card">
-                <h6 className="skill-card__title">HTML/CSS(SCSS)</h6>
-                <div className="skill-card__bar">
-                  <div
-                    className="skill-card__bar_fill"
-                    style={{ width: "70%" }}
-                  ></div>
-                </div>
-              </div>
-
-              <div className="skill-card">
-                <h6 className="skill-card__title">JS(React)</h6>
-                <div className="skill-card__bar">
-                  <div
-                    className="skill-card__bar_fill"
-                    style={{ width: "70%" }}
-                  ></div>
-                </div>
-              </div>
+              {Skills.map((skill) => (
+                <Skillcard title={skill.title} value={skill.value} />
+              ))}
             </div>
-            <div className="col-7 d-flex align-items-stretch">
-              <div className="webSkills">Web разарботка</div>
+            <div className="col-7 d-flex align-items-center">
+              {CircleSkills.map((skill) => (
+                <CircleSkillCard title={skill.title} value={skill.value} />
+              ))}
             </div>
           </div>
         </div>

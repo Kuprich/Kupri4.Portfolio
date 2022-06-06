@@ -14,6 +14,7 @@
   &__article {
     display: flex;
     color: $dark-blue;
+    margin-left: -20px;
     .article__left-side {
       margin: 20px 15px 0 0;
       margin-right: 15px;
@@ -112,6 +113,7 @@
   padding: 8px 20px;
   &__title {
     font-size: 15px;
+    margin-bottom: 3px;
   }
   &__bar {
     background-color: #fff;
@@ -121,5 +123,23 @@
   &__bar_fill {
     background-color: $dark-blue;
     height: 100%;
+  }
+}
+.circle_skill-card {
+  text-align: center;
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+    font-size: 17px;
+    padding-top: 0;
+  }
+  .CircularProgressbar-text {
+    transform: translate(-10px, 8px);
+  }
+  .progress-bar__wrapper {
+    display: flex;
+    justify-content: center;
   }
 }
