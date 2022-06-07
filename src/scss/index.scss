@@ -73,14 +73,24 @@ h6 {
     color: $dark-blue;
   }
 }
-
-.bkg-gradient {
-  background: #00f260;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, $green, $blue);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, $green, $blue);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+.tags {
+  text-align: center;
+  padding-bottom: 15px;
+  &:first-child {
+    margin-left: 0;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+}
+.tag {
+  font-size: 12px;
+  font-weight: 400;
+  color: #fff;
+  border-radius: 50px;
+  padding: 4px 7px;
+  background-color: $dark-blue;
+  margin: 4px;
 }
 
 .unit {
@@ -173,6 +183,7 @@ h6 {
   }
 
   &__content {
+    width: 100%;
     margin-left: -12px;
     background-color: #e1e2e6;
     @include media("max", "lg") {
@@ -208,63 +219,5 @@ h6 {
   }
   &__item:hover {
     color: #000;
-  }
-}
-
-// ================== Resume page styles =================== //
-
-.bar {
-  background-color: $light-gray;
-  border-radius: 30px;
-  &__wrapper {
-    padding: 3px 0;
-    border-radius: 30px;
-  }
-  margin: 10px 0;
-
-  &__icon {
-    margin: 0 10px;
-    width: 15px;
-    height: 15px;
-  }
-  &__name {
-    color: #fff;
-  }
-}
-
-// ================== Projects page styles =================== //
-
-.project-card {
-  &__image {
-    width: 100%;
-    transition: 0.5s;
-  }
-  &__image:hover {
-    border-radius: 20px;
-  }
-
-  &__link {
-    display: block;
-    border-radius: 20px;
-    cursor: pointer;
-  }
-
-  &__title {
-    margin: 5px 0;
-    display: flex;
-    align-self: center;
-    justify-content: center;
-
-    img {
-      width: 25px;
-      margin-right: 10px;
-    }
-    img:hover {
-      border-radius: 20px;
-    }
-    p {
-      padding-top: 4px;
-      margin: 0;
-    }
   }
 }

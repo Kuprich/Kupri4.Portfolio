@@ -5,7 +5,6 @@ import { motion } from "framer-motion"
 const Navbar = () => {
   const navbarItems = {
     about: "ОБО МНЕ",
-    resume: "РЕЗЮМЕ",
     projects: "ПРОЕКТЫ",
   }
 
@@ -15,8 +14,6 @@ const Navbar = () => {
     let currentUrl = window.location.href
     if (currentUrl.endsWith("/")) {
       setActive(navbarItems.about)
-    } else if (currentUrl.endsWith("/resume")) {
-      setActive(navbarItems.resume)
     } else if (currentUrl.endsWith("/projects")) {
       setActive(navbarItems.projects)
     }
@@ -53,17 +50,6 @@ const Navbar = () => {
             </div>
           </Link>
         )}
-
-        {active !== navbarItems.resume ? (
-          <Link to="/resume">
-            <div
-              className="navbar__item"
-              onClick={() => setActive(navbarItems.resume)}
-            >
-              РЕЗЮМЕ
-            </div>
-          </Link>
-        ) : null}
 
         {active !== navbarItems.projects && (
           <Link to="/projects">

@@ -3,7 +3,6 @@ import { motion } from "framer-motion"
 import Sidebar from "./components/Sidebar"
 import Navbar from "./components/Navbar"
 import About from "./pages/About"
-import Resume from "./pages/Resume"
 import Projects from "./pages/Projects"
 
 import {
@@ -49,7 +48,6 @@ function App() {
                 <Navbar />
                 <Routes>
                   <Route index path="/" element={<About />} />
-                  <Route path="resume" element={<Resume />} />
                   <Route path="projects" element={<Projects />} />
                   <Route path="*" element={<Navigate replace to="/" />} />
                 </Routes>
