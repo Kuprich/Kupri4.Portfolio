@@ -3,21 +3,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import React from "react"
 import "../scss/pages/projects.scss"
 
-const ProjectCard = ({ project: { name, image, github_url, category } }) => {
+const ProjectCard = ({ project: { name, image, descr, github_url, tags } }) => {
   return (
     <div className="col-4">
       <div className="project-card">
         <figure className="project-card__wrapper">
           <div
-            className="project-card__link"
+            className="project-card__img"
             style={{ backgroundImage: `url(${image})` }}
           >
-            <div className="project-card__link__hover-content">
+            <div className="project-card__img__hover-content">
               <div className="hover-content__descr">
-                <span>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Commodi quaerat ratione adipisci beatae quidem? Tempora sunt
-                </span>
+                <span>{descr}</span>
               </div>
               <div className="hover-content__btn_wrapper">
                 <a href="" className="hover-content__btn button button-light">
@@ -26,15 +23,20 @@ const ProjectCard = ({ project: { name, image, github_url, category } }) => {
               </div>
             </div>
           </div>
-          <div className="project-card__heading">
-            <span className="heading__icon">
+          <a
+            href={github_url}
+            target="_blank"
+            className="project-card__gihhub-link"
+          >
+            <span className="gihhub-link__icon">
               <FontAwesomeIcon icon={faGithub} />
             </span>
-            <p className="heading__name">{name}</p>
-          </div>
+            <p className="gihhub-link__name">{name}</p>
+          </a>
           <div className="tags">
-            <span className="tag">C#</span>
-            <span className="tag">ASP.NET Core</span>
+            {tags.map((tag) => (
+              <span className="tag">{tag}</span>
+            ))}
           </div>
         </figure>
       </div>
