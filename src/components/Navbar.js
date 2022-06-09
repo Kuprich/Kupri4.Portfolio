@@ -27,6 +27,10 @@ const Navbar = () => {
     visible: {
       y: 0,
       opacity: 1,
+      transitionEnd: {
+        x: 0,
+        y: 0,
+      },
     },
   }
 

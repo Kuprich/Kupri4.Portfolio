@@ -107,4 +107,23 @@
       border-color: rgba($dark-blue, 0);
     }
   }
+
+  &__popup__container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    &::before {
+      content: "";
+      position: fixed;
+      top: -300px;
+      height: -300px;
+      left: 0;
+      width: 300px;
+      height: 300px;
+      background-color: rgba($dark-blue, 1);
+    }
+  }
 }

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
 import resume from "../assets/resume.pdf"
+import { useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 import {
@@ -19,11 +20,12 @@ import {
   faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons"
 import { faEnvelopeOpen } from "@fortawesome/free-regular-svg-icons"
+import Modal from "./Modal"
+import EmailForm from "./EmailForm"
 
 const Sidebar = () => {
-  const handleEmailMe = () => {
-    window.open("mailto:ilya-kyp@yandex.ru")
-  }
+  const [showEmailForm, setShowEmailForm] = useState(false)
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" })
 
   const sidebar_variant = {
     hidden: {
@@ -37,6 +39,9 @@ const Sidebar = () => {
         delay: 0.2,
         duration: 0.7,
         type: "spring",
+      },
+      transitionEnd: {
+        x: 0,
       },
     },
   }
@@ -77,7 +82,7 @@ const Sidebar = () => {
       </div>
 
       <div className="sidebar__btns-container">
-        <a href={resume} download="resume.pdf" className="button button-light">
+        <a href={resume} download="resume.pdf" className="button">
           <div className="">
             <span className="button__icon">
               <FontAwesomeIcon icon={faFileArrowDown} />
@@ -86,7 +91,7 @@ const Sidebar = () => {
           </div>
         </a>
 
-        <a href="https://github.com/Kuprich" className="button button-light">
+        <a href="https://github.com/Kuprich" className="button">
           <div className="">
             <span className="button__icon">
               <FontAwesomeIcon icon={faGithub} />
@@ -144,8 +149,15 @@ const Sidebar = () => {
         </div>
       </div>
 
+      <Modal
+        showModal={showEmailForm}
+        setShowModal={setShowEmailForm}
+        modalTitle="Напишите мне личное сообщение"
+      >
+        <EmailForm formData={formData} setformData={setFormData} />
+      </Modal>
       <div className="sidebar__btns-container mt-4">
-        <a className="button button-light " onClick={handleEmailMe}>
+        <a className="button" onClick={() => setShowEmailForm(true)}>
           <div>
             <span className="button__icon">
               <FontAwesomeIcon icon={faEnvelopeOpen} />

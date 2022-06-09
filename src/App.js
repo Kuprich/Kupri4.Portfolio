@@ -1,10 +1,9 @@
-import React from "react"
+import React, { useState } from "react"
 import { motion } from "framer-motion"
 import Sidebar from "./components/Sidebar"
 import Navbar from "./components/Navbar"
 import About from "./pages/About"
 import Projects from "./pages/Projects"
-
 import {
   BrowserRouter as Router,
   Route,
@@ -25,6 +24,10 @@ const app_content_variant = {
       delay: 0.2,
       duration: 0.7,
       type: "spring",
+    },
+    transitionEnd: {
+      x: 0,
+      transform: "none",
     },
   },
 }
