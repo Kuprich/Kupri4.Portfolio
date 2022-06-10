@@ -1,9 +1,10 @@
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import React from "react"
+import { Link } from "react-router-dom"
 import "../scss/pages/projects.scss"
 
-const ProjectCard = ({ setShowModal, setSelectedProjectId, project }) => {
+const ProjectCard = ({ project }) => {
   return (
     <div className="col-4">
       <div className="project-card">
@@ -17,15 +18,12 @@ const ProjectCard = ({ setShowModal, setSelectedProjectId, project }) => {
                 <span>{project.descr}</span>
               </div>
               <div className="hover-content__btn_wrapper">
-                <button
+                <Link
+                  to={`/projects/${project.id}`}
                   className="hover-content__btn button button-light"
-                  onClick={() => {
-                    setSelectedProjectId(project.id)
-                    console.log(project.id)
-                  }}
                 >
                   Подробнее
-                </button>
+                </Link>
               </div>
             </div>
           </div>

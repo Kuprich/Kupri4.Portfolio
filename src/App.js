@@ -10,6 +10,7 @@ import {
   Routes,
   Navigate,
 } from "react-router-dom"
+import Project from "./pages/Project"
 
 const app_content_variant = {
   hidden: {
@@ -51,7 +52,10 @@ function App() {
                 <Navbar />
                 <Routes>
                   <Route index path="/" element={<About />} />
-                  <Route path="projects" element={<Projects />} />
+                  <Route path="/projects">
+                    <Route index element={<Projects />} />
+                    <Route path=":id" element={<Project />} />
+                  </Route>
                   <Route path="*" element={<Navigate replace to="/" />} />
                 </Routes>
               </motion.div>

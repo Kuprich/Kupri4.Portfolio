@@ -15,7 +15,6 @@ const Projects = () => {
       },
     },
   }
-  const [selectedProjectId, setSelectedProjectId] = useState({})
 
   return (
     <motion.div
@@ -27,11 +26,7 @@ const Projects = () => {
       <div className="container">
         <div className="row">
           {data_projects.map((data_project, i) => (
-            <ProjectCard
-              setSelectedProjectId={setSelectedProjectId}
-              project={data_project}
-              key={i}
-            />
+            <ProjectCard project={data_project} key={i} />
           ))}
         </div>
       </div>
