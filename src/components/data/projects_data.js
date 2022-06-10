@@ -1,36 +1,43 @@
 import chatapp from "../../assets/projects_images/chatapp.JPG"
 import covid from "../../assets/projects_images/COVID.jpg"
+import testImg1 from "../../assets/projects_images/test_img1.jpg"
+import testImg2 from "../../assets/projects_images/test_img2.jpg"
 import blinking from "../../assets/projects_images/blinking.JPG"
 import dev_talks from "../../assets/projects_images/Dev_talks.jpg"
 
 const data_projects = [
   {
+    id: 1,
     name: "COVID 19 tracker",
-    image: covid,
+    thumbnail: covid,
+    images: [testImg1, testImg2],
     descr: "Это проект Covid 19 tracker",
     detailed_descr: "Это подробное описание проекта Covid 19 tracker",
     github_url: "https://github.com/ilyaik?tab=projects",
     tags: ["C#", "ASP.NET Core"],
   },
   {
+    id: 2,
     name: "Realtime Chat App",
-    image: chatapp,
+    thumbnail: chatapp,
     descr: "Realtime Chat App, не знаю, что это такое",
     detailed_descr: "Это подробное описание Realtime Chat App",
     github_url: "https://github.com/ilyaik?tab=projects",
     tags: ["C#", "ASP.NET Core"],
   },
   {
+    id: 3,
     name: "Blinking app",
-    image: blinking,
+    thumbnail: blinking,
     descr: "Нано-технелогия, неизвестная людям",
     detailed_descr: "Это подробное описание Нано-технелогия, неизвестная людям",
     github_url: "https://github.com/ilyaik?tab=projects",
     tags: ["C#", "HTML/CSS"],
   },
   {
+    id: 4,
     name: "Dev talks",
-    image: dev_talks,
+    thumbnail: dev_talks,
     descr:
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse, quia?",
     detailed_descr: "Это подробное описание Dev talks",

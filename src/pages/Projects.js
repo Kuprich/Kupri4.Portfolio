@@ -2,7 +2,6 @@ import React, { useState } from "react"
 import { motion } from "framer-motion"
 import data_projects from "../components/data/projects_data"
 import ProjectCard from "../components/ProjectCard"
-import Modal from "../components/Modal"
 
 const Projects = () => {
   const projects_variant = {
@@ -16,8 +15,7 @@ const Projects = () => {
       },
     },
   }
-  const [showProjectModal, setShowProjectModal] = useState(false)
-  const [selectedProject, setSelectedProject] = useState({})
+  const [selectedProjectId, setSelectedProjectId] = useState({})
 
   return (
     <motion.div
@@ -26,19 +24,11 @@ const Projects = () => {
       initial="hidden"
       animate="visible"
     >
-      <Modal
-        showModal={showProjectModal}
-        setShowModal={setShowProjectModal}
-        modalTitle={selectedProject.name}
-      >
-        <div>{selectedProject.detailed_descr}</div>
-      </Modal>
       <div className="container">
         <div className="row">
           {data_projects.map((data_project, i) => (
             <ProjectCard
-              setShowModal={setShowProjectModal}
-              setSelectedProject={setSelectedProject}
+              setSelectedProjectId={setSelectedProjectId}
               project={data_project}
               key={i}
             />

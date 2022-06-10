@@ -3,14 +3,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import React from "react"
 import "../scss/pages/projects.scss"
 
-const ProjectCard = ({ setShowModal, setSelectedProject, project }) => {
+const ProjectCard = ({ setShowModal, setSelectedProjectId, project }) => {
   return (
     <div className="col-4">
       <div className="project-card">
         <figure className="project-card__wrapper">
           <div
             className="project-card__img"
-            style={{ backgroundImage: `url(${project.image})` }}
+            style={{ backgroundImage: `url(${project.thumbnail})` }}
           >
             <div className="project-card__img__hover-content">
               <div className="hover-content__descr">
@@ -20,8 +20,8 @@ const ProjectCard = ({ setShowModal, setSelectedProject, project }) => {
                 <button
                   className="hover-content__btn button button-light"
                   onClick={() => {
-                    setShowModal(true)
-                    setSelectedProject(project)
+                    setSelectedProjectId(project.id)
+                    console.log(project.id)
                   }}
                 >
                   Подробнее
