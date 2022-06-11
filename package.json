@@ -13,9 +13,9 @@
     "cra-template": "1.0.3",
     "framer-motion": "^6.3.3",
     "node-sass": "^7.0.1",
-    "react": "^16.13.1",
+    "react": "^16.14.0",
     "react-circular-progressbar": "^2.0.4",
-    "react-dom": "^16.13.1",
+    "react-dom": "^16.14.0",
     "react-responsive-carousel": "^3.2.23",
     "react-scripts": "^5.0.1",
     "scss": "^0.2.4",
@@ -43,6 +43,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react": "^18.0.12",
     "react-router-dom": "^6.3.0"
   }
 }

@@ -2,7 +2,6 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { AnimatePresence } from "framer-motion"
 import { motion } from "framer-motion"
-import React from "react"
 
 const myModalMotion = {
   hidden: {
@@ -66,12 +65,6 @@ const Modal = ({ showModal, setShowModal, modalTitle, children }) => {
               </button>
             </div>
             <div className="my-modal__content">{children}</div>
-            <button
-              className="button button_lightBkg"
-              onClick={() => setShowModal(false)}
-            >
-              Ок
-            </button>
           </motion.div>
         </motion.div>
       )}

@@ -1,4 +1,4 @@
-import { motion } from "framer-motion"
+import { AnimateSharedLayout, motion } from "framer-motion"
 import resume from "../assets/resume.pdf"
 import { useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"

@@ -1,0 +1,30 @@
+@import "../variables";
+
+.project-details {
+  &__heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  &__back-link {
+    color: $light-gray !important;
+
+    i {
+      padding-right: 3px;
+      vertical-align: -1px;
+      transition: 0.3s;
+    }
+    span {
+      font-size: 20px;
+      transition: 0.3s;
+    }
+    &:hover {
+      i {
+        color: $tomato;
+      }
+      span {
+        color: $dark-blue;
+      }
+    }
+  }
+}

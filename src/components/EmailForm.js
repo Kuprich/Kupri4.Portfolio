@@ -60,7 +60,9 @@ const EmailForm = ({ formData, setformData }) => {
           }
         ></textarea>
       </div>
-      <button type="submit">Отправить</button>
+      <button type="submit" className="button button_lightBkg">
+        Отправить
+      </button>
     </form>
   )
 }

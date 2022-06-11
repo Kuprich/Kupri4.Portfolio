@@ -1,12 +1,20 @@
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { motion } from "framer-motion"
 import React from "react"
 import { Link } from "react-router-dom"
-import "../scss/pages/projects.scss"
+
+const transition = { duration: 0.7, ease: "easeInOut" }
+
+const projectCardVariants = {
+  initial: { x: "30%", opacity: 0 },
+  enter: { x: 0, opacity: 1, transition },
+  exit: { x: "-30%", opacity: 0, transition },
+}
 
 const ProjectCard = ({ project }) => {
   return (
-    <div className="col-4">
+    <motion.div className="col-4" variants={projectCardVariants}>
       <div className="project-card">
         <figure className="project-card__wrapper">
           <div
@@ -19,7 +27,7 @@ const ProjectCard = ({ project }) => {
               </div>
               <div className="hover-content__btn_wrapper">
                 <Link
-                  to={`/projects/${project.id}`}
+                  to={`/${project.id}`}
                   className="hover-content__btn button button-light"
                 >
                   Подробнее
@@ -44,7 +52,7 @@ const ProjectCard = ({ project }) => {
           </div>
         </figure>
       </div>
-    </div>
+    </motion.div>
   )
 }
 export default ProjectCard

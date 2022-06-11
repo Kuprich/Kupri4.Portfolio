@@ -2,7 +2,9 @@
 @import "mixins";
 @import "fonts";
 @import "sidebar";
-@import "pages/about.scss";
+@import "pages/about";
+@import "pages/projects";
+@import "pages/project";
 
 // ================== General styles =================== //
 
@@ -246,7 +248,7 @@ h6 {
     &:hover,
     &:focus {
       background-color: #fff;
-      box-shadow: inset 0px -4px 0px 0px rgba($color: $tomato, $alpha: 0.5);
+      box-shadow: inset 0px -4px 0px 0px $dark-blue;
       border: none !important;
       outline: none;
     }
@@ -272,6 +274,7 @@ h6 {
   }
 
   &__content {
+    overflow-x: hidden;
     width: 100%;
     margin-left: -12px;
     background-color: #e1e2e6;
