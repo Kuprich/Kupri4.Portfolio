@@ -1,16 +1,29 @@
 import chatapp from "../../assets/projects_images/chatapp.JPG"
 import covid from "../../assets/projects_images/COVID.jpg"
-import testImg1 from "../../assets/projects_images/test_img1.jpg"
-import testImg2 from "../../assets/projects_images/test_img2.jpg"
 import blinking from "../../assets/projects_images/blinking.JPG"
 import dev_talks from "../../assets/projects_images/Dev_talks.jpg"
+
+import project1_img1_original from "../../assets/projects_images/Project1/test_img1_original.jpg"
+import project1_img1_thumbnail from "../../assets/projects_images/Project1/test_img1_thumbnail.jpg"
+
+import project1_img2_original from "../../assets/projects_images/Project1/test_img2_original.jpg"
+import project1_img2_thumbnail from "../../assets/projects_images/Project1/test_img2_thumbnail.jpg"
 
 const data_projects = [
   {
     id: 1,
     name: "COVID 19 tracker",
     thumbnail: covid,
-    images: [testImg1, testImg2],
+    images: [
+      {
+        original: project1_img1_original,
+        thumbnail: project1_img1_thumbnail,
+      },
+      {
+        original: project1_img2_original,
+        thumbnail: project1_img2_thumbnail,
+      },
+    ],
     descr: "Это проект Covid 19 tracker",
     detailed_descr: "Это подробное описание проекта Covid 19 tracker",
     github_url: "https://github.com/ilyaik?tab=projects",
