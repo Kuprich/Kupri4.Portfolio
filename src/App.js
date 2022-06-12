@@ -47,10 +47,10 @@ function App() {
         <div className="app">
           <div className="container">
             <div className="row">
-              <div className="col-lg-3 d-flex align-items-stretch">
+              <div className="col-md-3 col-sm-12 d-flex align-items-stretch sidebar__wrapper">
                 <Sidebar />
               </div>
-              <div className="col-lg-9 d-flex align-items-stretch">
+              <div className="col-md-9 col-sm-12 d-flex align-items-stretch app__wrapper">
                 <motion.div
                   className="app__content"
                   variants={app_content_variant}

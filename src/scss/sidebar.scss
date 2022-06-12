@@ -30,6 +30,15 @@ $profile: "../assets/icons/profile.svg";
     color: #fff;
     text-transform: uppercase;
     margin-bottom: 0px;
+    @include media("max", "xl") {
+      font-size: 25px;
+    }
+    @include media("max", "lg") {
+      font-size: 23px;
+    }
+    @include media("max", "md") {
+      font-size: 28px;
+    }
   }
   &__birthdate {
     font-size: 17px;
@@ -68,6 +77,15 @@ $profile: "../assets/icons/profile.svg";
         margin-right: 5px;
       }
     }
+    @include media("max", "xl") {
+      margin: 0 15px 15px 15px;
+    }
+    @include media("max", "lg") {
+      margin: 0 5px 15px 5px;
+    }
+    @include media("max", "md") {
+      margin: 0 32px 15px 32px;
+    }
   }
 
   &__btns-container {
@@ -75,6 +93,17 @@ $profile: "../assets/icons/profile.svg";
     flex-direction: column;
     .button {
       margin: 10px 30px;
+      @include media("max", "xl") {
+        margin: 10px 15px;
+        font-size: 16px;
+      }
+      @include media("max", "lg") {
+        margin: 10px 5px;
+      }
+      @include media("max", "md") {
+        margin: 10px 30px;
+        font-size: 18px;
+      }
     }
   }
 
@@ -107,11 +136,36 @@ $profile: "../assets/icons/profile.svg";
       .contacts__icon {
         font-size: 20px;
       }
+      @include media("max", "xl") {
+        font-size: 16px;
+        .contacts__icon {
+          font-size: 16px;
+        }
+      }
+      @include media("max", "lg") {
+        .contacts__icon {
+          display: none;
+        }
+        font-size: 15px;
+      }
+      @include media("max", "md") {
+        .contacts__icon {
+          display: inline-block;
+          font-size: 20px;
+        }
+        font-size: 20px;
+      }
     }
     &__mail {
       font-size: 17px;
       color: $light-gray;
       margin-bottom: -10px;
+      @include media("max", "xl") {
+        font-size: 15px;
+      }
+      @include media("max", "md") {
+        font-size: 17px;
+      }
     }
   }
 

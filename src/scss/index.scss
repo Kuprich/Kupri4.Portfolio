@@ -1,5 +1,4 @@
 @import "~react-image-gallery/styles/scss/image-gallery.scss";
-
 @import "variables";
 @import "mixins";
 @import "fonts";
@@ -272,6 +271,16 @@ h6 {
 
 // ================== App styles =================== //
 
+.sidebar__wrapper {
+  @include media("max", "md") {
+    padding-right: 30px;
+  }
+}
+.app__wrapper {
+  @include media("max", "md") {
+    padding-right: 19px;
+  }
+}
 .app {
   padding-top: 50px;
   padding-bottom: 50px;
@@ -294,11 +303,11 @@ h6 {
     margin-left: -12px;
     background-color: #e1e2e6;
     @include media("max", "lg") {
-      margin-top: 30px;
+      margin-left: 29px;
     }
-
     @include media("max", "md") {
-      margin-top: 15px;
+      margin-left: 0;
+      padding-right: 20px;
     }
   }
 }
