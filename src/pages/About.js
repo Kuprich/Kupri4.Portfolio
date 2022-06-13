@@ -1,7 +1,7 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { CircleSkills, Skills } from "../components/data/about_data"
+import { OtherSkills, Skills } from "../components/data/about_data"
 
 import {
   faBrain,
@@ -24,6 +24,14 @@ const About = () => {
       },
     },
   }
+  const [width, setWidth] = useState(window.innerWidth)
+  const updateDimensions = () => {
+    setWidth(window.innerWidth)
+  }
+  useEffect(() => {
+    window.addEventListener("resize", updateDimensions)
+    return () => window.removeEventListener("resize", updateDimensions)
+  }, [width])
 
   return (
     <motion.div
@@ -58,11 +66,13 @@ const About = () => {
               <h6 className="right-side__title">
                 09.03.01. Информатика и высислительная техника
               </h6>
-              <p className="right-side__descr">
-                Прошел обучение в ФГБОУ ВО «Рязанский государственный
-                радиотехнический университет им. В.Ф. Уткина». Получил знания и
-                диплом бакалавра.
-              </p>
+              <div className="right-side__descr">
+                <p>
+                  <b>-</b> Прошел обучение в ФГБОУ ВО «Рязанский государственный
+                  радиотехнический университет им. В.Ф. Уткина». Получил знания
+                  и диплом бакалавра.
+                </p>
+              </div>
             </div>
           </div>
 
@@ -74,7 +84,7 @@ const About = () => {
             <div className="unit__line"></div>
           </div>
 
-          <div className="about__article">
+          <div className="about__article ">
             <div className="article__left-side">
               <div className="left-side__months">
                 <span className="left-side__months__from">Август</span>
@@ -86,17 +96,24 @@ const About = () => {
               </div>
               <div className="left-side__desc"></div>
             </div>
-            <div className="article__right-side">
+            <div className="article__right-side pb-4">
               <h6 className="right-side__title">
                 ГАУ Республики Мордовия "МФЦ" по Зубово-Полянскому
                 муниципальному району
               </h6>
-              <p className="right-side__descr">
-                Выполнял обязанности системного администратора. Осуществлял
-                работы по настройке ЛВС учреждения. Оперативно(по мере
-                возможности) устранял появляющиеся несправности в процессе
-                работы со специальным программным обеспечением и техникой.
-              </p>
+              <div className="right-side__descr">
+                <p>
+                  <b>-</b> Выполнял обязанности системного администратора.
+                </p>
+                <p>
+                  <b>-</b> Осуществлял работы по настройке ЛВС учреждения.
+                </p>
+                <p>
+                  <b>-</b> Оперативно (по мере возможности) устранял
+                  появляющиеся несправности в процессе работы со специальным
+                  программным обеспечением и техникой.
+                </p>
+              </div>
             </div>
           </div>
 
@@ -115,14 +132,22 @@ const About = () => {
                 Филиал ФГБУ Информационно Аналитический Центр Судебного
                 департамента в Республике Мордовия
               </h6>
-              <p className="right-side__descr">
-                Выполнял техническую поддержку пользователей автоматизированной
-                системы ГАС "«Правосудие»", Осуществял контроль за
-                функционированием системы "Видеоконференцсвязь", которая
-                упрощает проведение судебных заседаний. Поддерживал комплекс
-                специального программного обеспечения на своих объектах
-                автоматизации
-              </p>
+              <div className="right-side__descr">
+                <p>
+                  <b>-</b> Выполнял техническую поддержку пользователей
+                  Государственной автоматизированной системы "«Правосудие»".
+                </p>
+                <p>
+                  <b>-</b> Осуществял контроль за функционированием системы
+                  "Видеоконференцсвязь", которая упрощает проведение судебных
+                  заседаний.
+                </p>
+                <p>
+                  <b>-</b> Поддерживал комплекс специального программного
+                  обеспечения на своих объектах автоматизации в актуальном
+                  состоянии
+                </p>
+              </div>
             </div>
           </div>
 
@@ -135,15 +160,19 @@ const About = () => {
           </div>
 
           <div className="row">
-            <div className="col-5 d-flex align-items-stretch flex-column">
+            <div className="col-lg-5 col-md-6 d-flex align-items-stretch flex-column">
               {Skills.map((skill) => (
                 <Skillcard title={skill.title} value={skill.value} />
               ))}
             </div>
-            <div className="col-7 d-flex align-items-center">
-              {CircleSkills.map((skill) => (
-                <CircleSkillCard title={skill.title} value={skill.value} />
-              ))}
+            <div className="col-lg-7 col-md-6 d-flex align-items-center about__other-skills">
+              {width > 992
+                ? OtherSkills.map((skill) => (
+                    <CircleSkillCard title={skill.title} value={skill.value} />
+                  ))
+                : OtherSkills.map((skill) => (
+                    <Skillcard title={skill.title} value={skill.value} />
+                  ))}
             </div>
           </div>
         </div>

@@ -23,7 +23,7 @@ export const Skills = [
   },
 ]
 
-export const CircleSkills = [
+export const OtherSkills = [
   {
     title: "Обучаемость",
     value: 50,

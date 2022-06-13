@@ -11,17 +11,12 @@ import {
   faMobileRetro,
   faShareNodes,
 } from "@fortawesome/free-solid-svg-icons"
-import {
-  faDiscord,
-  faGithub,
-  faSkype,
-  faTelegram,
-  faVk,
-  faWhatsapp,
-} from "@fortawesome/free-brands-svg-icons"
+import { faGithub, faVk } from "@fortawesome/free-brands-svg-icons"
 import { faEnvelopeOpen } from "@fortawesome/free-regular-svg-icons"
 import Modal from "./Modal"
 import EmailForm from "./EmailForm"
+import CategoryDelimeter from "./CategoryDelimeter"
+import { socialIcons } from "./data/sidebar_data"
 
 const Sidebar = () => {
   const [showEmailForm, setShowEmailForm] = useState(false)
@@ -69,16 +64,10 @@ const Sidebar = () => {
         <span>Зубова Поляна, Мордовия</span>
       </div>
 
-      <div className="unit unit_dark-bkg">
-        <div className="unit__logo">
-          <FontAwesomeIcon icon={faAddressCard} />
-        </div>
-        <div className="unit__name">Профиль</div>
-        <div className="unit__line"></div>
-      </div>
+      <CategoryDelimeter icon={faAddressCard} name="Профиль" />
+
       <div className="sidebar__descr">
-        Перейдя по ссылке ниже Вы можете скачать и ознакомиться c моим{" "}
-        <span>резюме</span>.
+        Перейдя по ссылке ниже Вы можете скачать и ознакомиться c моим резюме
       </div>
 
       <div className="sidebar__btns-container">
@@ -101,13 +90,7 @@ const Sidebar = () => {
         </a>
       </div>
 
-      <div className="unit">
-        <div className="unit__logo">
-          <FontAwesomeIcon icon={faShareNodes} />
-        </div>
-        <div className="unit__name">Контакты</div>
-        <div className="unit__line"></div>
-      </div>
+      <CategoryDelimeter icon={faShareNodes} name="Контакты" />
 
       <div className="sidebar__descr">
         Вы можете найти меня в{" "}
@@ -119,18 +102,12 @@ const Sidebar = () => {
       </div>
 
       <figure className="sidebar__social-icons">
-        <a href="https://join.skype.com/invite/iyrg4pvmO58v" target="_blank">
-          <FontAwesomeIcon icon={faSkype} />
-        </a>
-        <a href="https://t.me/Kupri4" target="_blank">
-          <FontAwesomeIcon icon={faTelegram} />
-        </a>
-        <a href="https://wa.me/79176983633" target="_blank">
-          <FontAwesomeIcon icon={faWhatsapp} />
-        </a>
-        <a href="" target="_blank">
-          <FontAwesomeIcon icon={faDiscord} />
-        </a>
+        {socialIcons &&
+          socialIcons.map((social) => (
+            <a href={social.link} target="_blank">
+              <FontAwesomeIcon icon={social.icon} />
+            </a>
+          ))}
       </figure>
 
       <div className="contacts">

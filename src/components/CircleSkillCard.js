@@ -6,8 +6,11 @@ const CircleSkillCard = ({ title, value }) => {
   return (
     <div className="col-4 col-xs-12 circle_skill-card">
       <p className="circle_skill-card__title">{title}</p>
-      <div className="progress-bar__wrapper">
-        <div style={{ width: 100, height: 100, textAlign: "center" }}>
+      <div className="circular-progressbar__wrapper">
+        <div
+          className="circular-progressbar"
+          style={{ width: 100, height: 100, textAlign: "center" }}
+        >
           <CircularProgressbar
             value={value}
             strokeWidth={7}

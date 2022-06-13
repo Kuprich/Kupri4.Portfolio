@@ -14,7 +14,7 @@ const projectCardVariants = {
 
 const ProjectCard = ({ project }) => {
   return (
-    <motion.div className="col-4" variants={projectCardVariants}>
+    <motion.div className="col-sm-6 col-lg-4" variants={projectCardVariants}>
       <div className="project-card">
         <figure className="project-card__wrapper">
           <div

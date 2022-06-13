@@ -1,7 +1,13 @@
 // ================== About page styles =================== //
 .about {
   .unit__logo {
-    padding-left: 5px;
+    padding-left: 6px;
+    @include media("max", "xl") {
+      padding-left: 4px;
+    }
+    @include media("max", "lg") {
+      padding-left: 1px;
+    }
   }
 }
 
@@ -81,6 +87,26 @@
         margin-top: 5px;
         font-size: 17px;
       }
+      @include media("max", "xl") {
+        width: 130px;
+        .left-side__years {
+          font-size: 22px;
+          &::after {
+            width: 105px;
+          }
+        }
+        .left-side__months {
+          font-size: 11px;
+          margin: -29px 0 -7px 0;
+          &__from,
+          &__to {
+            width: 45px;
+          }
+          &__to {
+            margin-left: 17px;
+          }
+        }
+      }
     }
     .article__right-side {
       .right-side__title {
@@ -89,6 +115,9 @@
       }
       .right-side__descr {
         font-size: 20px;
+        p {
+          margin-bottom: 10px;
+        }
       }
     }
   }
@@ -96,6 +125,15 @@
   &__heading {
     color: $dark-blue;
     font-size: 1.8rem;
+  }
+  .about__other-skills {
+    @include media("max", "lg") {
+      flex-direction: column;
+      justify-content: center;
+    }
+    @include media("max", "md") {
+      margin-top: 8px;
+    }
   }
 }
 
@@ -138,7 +176,7 @@
   .CircularProgressbar-text {
     transform: translate(-10px, 8px);
   }
-  .progress-bar__wrapper {
+  .circular-progressbar__wrapper {
     display: flex;
     justify-content: center;
   }
