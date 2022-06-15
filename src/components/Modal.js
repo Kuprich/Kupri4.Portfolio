@@ -37,7 +37,13 @@ const myModalContainerMotion = {
   },
 }
 
-const Modal = ({ showModal, setShowModal, modalTitle, children }) => {
+const Modal = ({
+  showModal,
+  setShowModal,
+  modalTitle,
+  modalTitleIcon,
+  children,
+}) => {
   return (
     <AnimatePresence exitBeforeEnter>
       {showModal && (
@@ -48,24 +54,33 @@ const Modal = ({ showModal, setShowModal, modalTitle, children }) => {
           animate="visible"
           exit="hidden"
         >
-          <motion.div
-            className="my-modal__container"
-            variants={myModalContainerMotion}
-            initial="hidden"
-            animate="visible"
-            exit="hidden"
-          >
-            <div className="my-modal__heading">
-              <span>{modalTitle}</span>
-              <button
-                className="close__button"
-                onClick={() => setShowModal(false)}
+          <div className="container d-flex justify-content-center">
+            <div className="col-xl-7 col-lg-8 col-md-11 col-sm-12">
+              <motion.div
+                className="my-modal__container"
+                variants={myModalContainerMotion}
+                initial="hidden"
+                animate="visible"
+                exit="hidden"
               >
-                <FontAwesomeIcon icon={faXmark} />
-              </button>
+                <div className="my-modal__heading">
+                  <span>
+                    <i>
+                      <FontAwesomeIcon icon={modalTitleIcon} />
+                    </i>
+                    {modalTitle}
+                  </span>
+                  <button
+                    className="close__button"
+                    onClick={() => setShowModal(false)}
+                  >
+                    <FontAwesomeIcon icon={faXmark} />
+                  </button>
+                </div>
+                <div className="my-modal__content">{children}</div>
+              </motion.div>
             </div>
-            <div className="my-modal__content">{children}</div>
-          </motion.div>
+          </div>
         </motion.div>
       )}
     </AnimatePresence>

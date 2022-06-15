@@ -18,21 +18,6 @@ const projectVariants = {
   exit: { x: "20vw", opacity: 0, transition },
 }
 
-const images = [
-  {
-    original: "https://picsum.photos/id/1018/1000/600/",
-    thumbnail: "https://picsum.photos/id/1018/250/150/",
-  },
-  {
-    original: "https://picsum.photos/id/1015/1000/600/",
-    thumbnail: "https://picsum.photos/id/1015/250/150/",
-  },
-  {
-    original: "https://picsum.photos/id/1019/1000/600/",
-    thumbnail: "https://picsum.photos/id/1019/250/150/",
-  },
-]
-
 const Project = () => {
   const projectId = useParams().id
 
@@ -50,7 +35,7 @@ const Project = () => {
       <div className="container">
         <div className="row">
           <div className="project-details__heading">
-            <h3>Проект {project.name}</h3>
+            <h3>{project.name}</h3>
 
             <Link
               to="/projects"
@@ -70,22 +55,20 @@ const Project = () => {
           </div>
         </div>
         <div className="row">
-          <div className="project-details__desrc">
-            Далеко-далеко за словесными, горами в стране гласных и согласных
-            живут рыбные тексты. Одна своих языкового, переулка строчка наш
-            текстами реторический себя? Ее, продолжил мир? Города вопрос они
-            текстов от всех жизни всемогущая первую.
-            <p>
-              Используемые технологии: технология 1, технология 2, технология 3
-            </p>
-          </div>
+          <div className="project-details__desrc">{project.detailed_descr}</div>
         </div>
-        <a href={project.github_url} target="_blank">
+
+        <a
+          href={project.github_url}
+          target="_blank"
+          className="project-details__source-link"
+        >
           <i>
             <FontAwesomeIcon icon={faGithub} />
-            Страница проекта на GitHub
           </i>
+          Страница проекта на GitHub
         </a>
+
         <div className="row">
           <div className="project-details__bottom-nav">
             {project.id - 1 <= 0 ? (

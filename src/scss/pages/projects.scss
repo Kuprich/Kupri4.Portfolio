@@ -22,10 +22,14 @@
   }
   &__img {
     display: block;
-    height: 150px;
+    height: 200px;
     background-position: center;
-    background-size: cover;
+    background-size: 100%;
     position: relative;
+    transition: 2s;
+    &:hover {
+      background-size: 120%;
+    }
     &__hover-content {
       padding: 10px;
       display: flex;

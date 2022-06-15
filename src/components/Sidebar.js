@@ -17,6 +17,7 @@ import Modal from "./Modal"
 import EmailForm from "./EmailForm"
 import CategoryDelimeter from "./CategoryDelimeter"
 import { socialIcons } from "./data/sidebar_data"
+import { ToastContainer } from "react-toastify"
 
 const Sidebar = () => {
   const [showEmailForm, setShowEmailForm] = useState(false)
@@ -130,14 +131,23 @@ const Sidebar = () => {
         showModal={showEmailForm}
         setShowModal={setShowEmailForm}
         modalTitle="Напишите мне личное сообщение"
+        modalTitleIcon={faEnvelope}
       >
-        <EmailForm formData={formData} setformData={setFormData} />
+        <EmailForm
+          formData={formData}
+          setformData={setFormData}
+          setShowEmailForm={setShowEmailForm}
+        />
       </Modal>
+      <ToastContainer autoClose={5000} />
       <div className="sidebar__btns-container mt-4">
         <a className="button" onClick={() => setShowEmailForm(true)}>
           <div>
             <span className="button__icon">
-              <FontAwesomeIcon icon={faEnvelopeOpen} />
+              <FontAwesomeIcon
+                icon={faEnvelopeOpen}
+                setShowEmailForm={setShowEmailForm}
+              />
             </span>
             Написать мне
           </div>

@@ -52,14 +52,18 @@ const About = () => {
 
           <div className="about__article">
             <div className="article__left-side">
-              <div className="left-side__months">
-                <span className="left-side__months__from">Сентябрь</span>
-                <span className="left-side__months__to">Июнь</span>
+              <div>
+                <div className="left-side__months">
+                  <span className="left-side__months__from">Сентябрь</span>
+                  <span className="left-side__months__to">Июнь</span>
+                </div>
+                <div className="left-side__years">2016 - 2021</div>
               </div>
-              <div className="left-side__years">2016 - 2021</div>
-              <div className="left-side__title">Высшее образование</div>
-              <div className="left-side__descr">
-                Бакалавриат, Заочная форма обучения
+              <div>
+                <div className="left-side__title">Высшее образование</div>
+                <div className="left-side__descr">
+                  Бакалавриат, Заочная форма обучения
+                </div>
               </div>
             </div>
             <div className="article__right-side">
@@ -91,6 +95,7 @@ const About = () => {
                 <span className="left-side__months__to">Ноябрь</span>
               </div>
               <div className="left-side__years">2017 - 2019</div>
+
               <div className="left-side__title">
                 Специалист настройки локальных сетей
               </div>

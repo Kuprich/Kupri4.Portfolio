@@ -25,6 +25,22 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin: 10px 0;
+  }
+  &__source-link {
+    i {
+      transition: 0.4s;
+      display: inline-block;
+      vertical-align: -1px;
+      padding-right: 5px;
+    }
+    font-weight: 400;
+    font-size: 18px;
+    &:hover {
+      i {
+        color: $tomato;
+      }
+    }
   }
   &__bottom-nav {
     padding-top: 10px;

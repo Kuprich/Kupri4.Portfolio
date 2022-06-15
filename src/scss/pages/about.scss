@@ -21,7 +21,16 @@
     display: flex;
     color: $dark-blue;
     margin-left: -20px;
+    &:hover {
+      .article__left-side {
+        border-color: $tomato;
+        &:after {
+          background-color: $tomato;
+        }
+      }
+    }
     .article__left-side {
+      transition: 0.5s;
       margin: 20px 15px 0 0;
       margin-right: 15px;
       margin-top: 30px;
@@ -32,7 +41,9 @@
       flex-shrink: 0;
       width: 195px;
       position: relative;
+
       &:after {
+        transition: 0.5s;
         content: "";
         position: absolute;
         width: 10px;
@@ -117,6 +128,12 @@
         font-size: 20px;
         p {
           margin-bottom: 10px;
+        }
+        @include media("max", "lg") {
+          font-size: 18px;
+        }
+        @include media("max", "sm") {
+          font-size: 17px;
         }
       }
     }

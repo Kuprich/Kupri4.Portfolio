@@ -1,14 +1,17 @@
 import emailjs from "@emailjs/browser"
-import React from "react"
+import React, { useState } from "react"
 import { useRef } from "react"
+import { ToastContainer, toast } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
 
-const EmailForm = ({ formData, setformData }) => {
+const EmailForm = ({ setShowEmailForm, formData, setformData }) => {
   const emailForm = useRef()
+
+  const succeessSendToast = () => toast.success("Письмо успешно отправлено!")
+  const erorSendToast = () => toast.error("Ошибка при отправке письма!")
 
   const sendEmail = (e) => {
     e.preventDefault()
-
-    setformData({ name: "", email: "", message: "" })
 
     emailjs
       .sendForm(
@@ -19,51 +22,58 @@ const EmailForm = ({ formData, setformData }) => {
       )
       .then(
         (result) => {
-          console.log(result.text)
+          setformData({ name: "", email: "", message: "" })
+          succeessSendToast()
+          setShowEmailForm(false)
         },
         (error) => {
-          console.log(error.text)
+          erorSendToast()
+          setShowEmailForm(false)
         }
       )
   }
   return (
-    <form className="email-form" onSubmit={sendEmail} ref={emailForm}>
-      <div className="email-form__name email-form__control">
-        <label htmlFor="from_name">Ваше Имя:</label>
-        <input
-          type="text"
-          name="from_name"
-          value={formData.name}
-          onChange={(e) => setformData({ ...formData, name: e.target.value })}
-        />
-      </div>
-      <div className="email-form__email email-form__control">
-        <label htmlFor="reply_to">Ваш Email адрес:</label>
-        <input
-          type="email"
-          name="reply_to"
-          value={formData.email}
-          onChange={(e) => setformData({ ...formData, email: e.target.value })}
-        />
-        <span className="input_descr">
-          Заполняя поле "Email", вы обеспечиваете обратную связь
-        </span>
-      </div>
-      <div className="email-form__message email-form__control">
-        <label htmlFor="message">Текст сообщения:</label>
-        <textarea
-          type="text"
-          name="message"
-          value={formData.message}
-          onChange={(e) =>
-            setformData({ ...formData, message: e.target.value })
-          }
-        ></textarea>
-      </div>
-      <button type="submit" className="button button_lightBkg">
-        Отправить
-      </button>
-    </form>
+    <div>
+      <form className="email-form" onSubmit={sendEmail} ref={emailForm}>
+        <div className="email-form__name email-form__control">
+          <label htmlFor="from_name">Ваше Имя:</label>
+          <input
+            type="text"
+            name="from_name"
+            value={formData.name}
+            onChange={(e) => setformData({ ...formData, name: e.target.value })}
+          />
+        </div>
+        <div className="email-form__email email-form__control">
+          <label htmlFor="reply_to">Ваш Email адрес:</label>
+          <input
+            type="email"
+            name="reply_to"
+            value={formData.email}
+            onChange={(e) =>
+              setformData({ ...formData, email: e.target.value })
+            }
+          />
+          <span className="input_descr">
+            Заполняя поле "Email", вы обеспечиваете обратную связь
+          </span>
+        </div>
+        <div className="email-form__message email-form__control">
+          <label htmlFor="message">Текст сообщения:</label>
+          <textarea
+            type="text"
+            name="message"
+            value={formData.message}
+            onChange={(e) =>
+              setformData({ ...formData, message: e.target.value })
+            }
+          ></textarea>
+        </div>
+        <button type="submit" className="button button_lightBkg">
+          Отправить
+        </button>
+      </form>
+    </div>
   )
 }
 
