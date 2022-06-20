@@ -111,7 +111,6 @@ h6 {
 }
 .tags {
   text-align: center;
-  padding-bottom: 15px;
   &:first-child {
     margin-left: 0;
   }
@@ -120,6 +119,7 @@ h6 {
   }
 }
 .tag {
+  display: inline-block;
   font-size: 12px;
   font-weight: 400;
   color: #fff;
@@ -289,10 +289,17 @@ h6 {
   @include media("max", "md") {
     padding-right: 30px;
   }
+  @include media("max", "sm") {
+    padding: 0;
+    margin: 0;
+  }
 }
 .app__wrapper {
   @include media("max", "md") {
     padding-right: 19px;
+  }
+  @include media("max", "sm") {
+    padding: 0;
   }
 }
 .app {
@@ -301,6 +308,9 @@ h6 {
   @include media("max", "md") {
     padding-top: 20px;
     padding-bottom: 20px;
+  }
+  @include media("max", "sm") {
+    padding-top: 0;
   }
 
   .sidebar,
@@ -326,6 +336,8 @@ h6 {
     @include media("max", "md") {
       margin-left: 0;
       padding-right: 20px;
+    }
+    @include media("max", "sm") {
     }
   }
 }

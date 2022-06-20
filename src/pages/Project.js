@@ -22,7 +22,7 @@ const Project = () => {
   const projectId = useParams().id
 
   const project = data_projects.find((x) => x.id == projectId)
-  const projectsCout = data_projects.length
+  const projectsCount = data_projects.length
 
   return (
     <motion.div
@@ -61,6 +61,7 @@ const Project = () => {
         <a
           href={project.github_url}
           target="_blank"
+          rel="noreferrer"
           className="project-details__source-link"
         >
           <i>
@@ -86,7 +87,7 @@ const Project = () => {
               </Link>
             )}
 
-            {project.id + 1 < projectsCout && (
+            {project.id + 1 <= projectsCount && (
               <Link
                 to={`/${project.id + 1}`}
                 className="bottom-nav__next project__nav-link"

@@ -6,8 +6,9 @@
 
 .project-card {
   background-color: #fff;
+  height: 100%;
+  box-shadow: 1px 1px 8px 0 rgba(34, 60, 80, 0.2);
   &__wrapper {
-    box-shadow: 1px 1px 8px 0 rgba(34, 60, 80, 0.2);
     &:hover {
       .project-card__img__hover-content {
         opacity: 0.9 !important;
@@ -24,12 +25,9 @@
     display: block;
     height: 200px;
     background-position: center;
-    background-size: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
     position: relative;
-    transition: 2s;
-    &:hover {
-      background-size: 120%;
-    }
     &__hover-content {
       padding: 10px;
       display: flex;
@@ -44,6 +42,8 @@
       transition: 0.5s;
 
       .hover-content__descr {
+        padding-top: 50px;
+        padding-bottom: 20px;
         transition: 0.6s;
         display: flex;
         position: relative;
@@ -56,7 +56,7 @@
         overflow-y: scroll;
         -ms-overflow-style: none;
         scrollbar-width: 0;
-        transform: translateY(-10px);
+        transform: translateY(-20px);
         &::-webkit-scrollbar {
           display: none;
         }
@@ -88,6 +88,7 @@
     align-items: center;
     justify-content: center;
     color: $dark-blue;
+    text-align: center;
     &:hover {
       .gihhub-link__icon {
         color: $tomato;
@@ -106,7 +107,7 @@
       padding: 0;
       margin: 0;
       color: $dark-blue;
-      font-size: 18px;
+      font-size: 16px;
       border-bottom: 1px solid;
       border-color: rgba($dark-blue, 0);
     }

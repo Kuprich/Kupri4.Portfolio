@@ -7,7 +7,9 @@ $avatar-image: "../assets/icons/mighty-coder.jpg";
   text-align: center;
   margin-right: -12px;
   color: #fff;
-
+  @include media("max", "sm") {
+    margin-right: 0px;
+  }
   &__icon {
     width: 25px;
     height: 25px;

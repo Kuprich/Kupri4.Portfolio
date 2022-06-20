@@ -104,8 +104,8 @@ const Sidebar = () => {
 
       <figure className="sidebar__social-icons">
         {socialIcons &&
-          socialIcons.map((social) => (
-            <a href={social.link} target="_blank">
+          socialIcons.map((social, i) => (
+            <a href={social.link} target="_blank" key={i}>
               <FontAwesomeIcon icon={social.icon} />
             </a>
           ))}
