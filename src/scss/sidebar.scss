@@ -111,6 +111,9 @@ $avatar-image: "../assets/icons/mighty-coder.jpg";
   &__social-icons {
     a {
       color: #fff !important;
+      &:hover {
+        color: $tomato !important;
+      }
     }
     display: flex;
     justify-content: space-around;
@@ -128,14 +131,21 @@ $avatar-image: "../assets/icons/mighty-coder.jpg";
     &__icon {
       margin-right: 5px;
       font-size: 15px;
+      transition: 0.3s;
     }
     &__phone {
+      color: #fff !important;
       font-size: 20px;
       margin: 10px 0 -2px;
       letter-spacing: 2px;
       font-weight: bold;
       .contacts__icon {
         font-size: 20px;
+      }
+      &:hover {
+        .contacts__icon {
+          color: $tomato;
+        }
       }
       @include media("max", "xl") {
         font-size: 16px;
@@ -161,6 +171,12 @@ $avatar-image: "../assets/icons/mighty-coder.jpg";
       font-size: 17px;
       color: $light-gray;
       margin-bottom: -10px;
+      &:hover {
+        .contacts__icon {
+          color: $tomato;
+        }
+        color: #fff;
+      }
       @include media("max", "xl") {
         font-size: 15px;
       }
@@ -168,10 +184,5 @@ $avatar-image: "../assets/icons/mighty-coder.jpg";
         font-size: 17px;
       }
     }
-  }
-
-  &__email {
-    color: #fff;
-    cursor: pointer;
   }
 }

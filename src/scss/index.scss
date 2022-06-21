@@ -245,6 +245,18 @@ h6 {
       margin-right: 10px;
     }
   }
+  @include media("max", "md") {
+    &__wrapper {
+      padding: 15px;
+      display: block !important;
+    }
+  }
+  @include media("max", "sm") {
+    &__wrapper {
+      padding: 0px;
+      display: block !important;
+    }
+  }
 }
 
 .email-form {
@@ -281,6 +293,9 @@ h6 {
       outline: none;
     }
   }
+  textarea {
+    height: 15vh;
+  }
 }
 
 // ================== App styles =================== //
@@ -311,6 +326,7 @@ h6 {
   }
   @include media("max", "sm") {
     padding-top: 0;
+    padding-bottom: 0;
   }
 
   .sidebar,

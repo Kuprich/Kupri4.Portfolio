@@ -54,7 +54,7 @@ const Modal = ({
           animate="visible"
           exit="hidden"
         >
-          <div className="container d-flex justify-content-center">
+          <div className="container d-flex justify-content-center my-modal__wrapper">
             <div className="col-xl-7 col-lg-8 col-md-11 col-sm-12">
               <motion.div
                 className="my-modal__container"

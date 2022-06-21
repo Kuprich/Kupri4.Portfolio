@@ -42,6 +42,22 @@ import ShopCart_img6_thumb from "../../assets/projects_images/ShopCart/thumb/6.p
 import ShopCart_img7_thumb from "../../assets/projects_images/ShopCart/thumb/7.png"
 import ShopCart_img8_thumb from "../../assets/projects_images/ShopCart/thumb/8.png"
 
+import Equipment_img1 from "../../assets/projects_images/Equipment/original/1.png"
+import Equipment_img2 from "../../assets/projects_images/Equipment/original/2.png"
+import Equipment_img3 from "../../assets/projects_images/Equipment/original/3.png"
+import Equipment_img4 from "../../assets/projects_images/Equipment/original/4.png"
+import Equipment_img5 from "../../assets/projects_images/Equipment/original/5.png"
+import Equipment_img6 from "../../assets/projects_images/Equipment/original/6.png"
+import Equipment_img7 from "../../assets/projects_images/Equipment/original/7.png"
+
+import Equipment_img1_thumb from "../../assets/projects_images/Equipment/thumb/1.png"
+import Equipment_img2_thumb from "../../assets/projects_images/Equipment/thumb/2.png"
+import Equipment_img3_thumb from "../../assets/projects_images/Equipment/thumb/3.png"
+import Equipment_img4_thumb from "../../assets/projects_images/Equipment/thumb/4.png"
+import Equipment_img5_thumb from "../../assets/projects_images/Equipment/thumb/5.png"
+import Equipment_img6_thumb from "../../assets/projects_images/Equipment/thumb/6.png"
+import Equipment_img7_thumb from "../../assets/projects_images/Equipment/thumb/7.png"
+
 const data_projects = [
   {
     id: 1,
@@ -248,6 +264,94 @@ const data_projects = [
     ),
     github_url: "https://github.com/Kuprich/Kupri4.ShopCart",
     tags: ["HTML/CSS", "C#", "ASP.NET Core"],
+  },
+
+  {
+    id: 4,
+    name: "Учет ТС организации",
+    thumbnail: Equipment_img2,
+    images: [
+      {
+        original: Equipment_img1,
+        thumbnail: Equipment_img1_thumb,
+      },
+      {
+        original: Equipment_img2,
+        thumbnail: Equipment_img2_thumb,
+      },
+      {
+        original: Equipment_img3,
+        thumbnail: Equipment_img3_thumb,
+      },
+      {
+        original: Equipment_img4,
+        thumbnail: Equipment_img4_thumb,
+      },
+      {
+        original: Equipment_img5,
+        thumbnail: Equipment_img5_thumb,
+      },
+      {
+        original: Equipment_img6,
+        thumbnail: Equipment_img6_thumb,
+      },
+      {
+        original: Equipment_img7,
+        thumbnail: Equipment_img7_thumb,
+      },
+    ],
+    descr:
+      "Программа по учету технических средств, используемых в организации. Учет заявкок по ремонту и обслуживанию этих ТС",
+    detailed_descr: (
+      <div>
+        <p>
+          Данное программоне обеспечение позовляет вести учет технических
+          средств, обслуживаемых филиалом ФГБУ ИАЦ судебного департамента по
+          Республике Мордовия
+        </p>
+        <p>
+          Оборудование, входящее в комплект (например системный блок, монитор,
+          ИБП) имеет общий инвентарный номер.
+        </p>
+        <p>
+          Филиал "Информационно Аналитический Центр" осуществляет техническую
+          поддуржку пользователей системы ГАС "Правосудие". Программа позволяет
+          вести учет заявок по ремонту оборудования
+        </p>
+        <ul>
+          Основными возможностями данного ПО являются:
+          <li>
+            Ввод данных о комплекте оборудования (инвентарный номер, дата
+            поставки, владелец конплекта)
+          </li>
+          <li>
+            Ввод/редактирование данных о технических средствах, входящих в
+            данный комплект
+          </li>
+          <li>
+            Фильтрация (поиск) оборудования по различным параметрам (можно
+            использовать сразу несколько параметров фильтрации)
+          </li>
+          <li>
+            Сведения о заявках по выбранному оборудованию, а именно
+            <ul>
+              <li>Движение заявки</li>
+              <li>Текущее состояние заявки</li>
+              <li>Прикрепленные документы (например технический акт)</li>
+            </ul>
+          </li>
+          <li>
+            Форма для просмотра всех поступивших заявок (имеется поиск по
+            заявкам)
+          </li>
+          <li>
+            Форма для просмотра всех документов (имеется поиск по документам)
+          </li>
+        </ul>
+      </div>
+    ),
+    github_url: "https://github.com/Kuprich/EquipmentKP",
+    tags: ["C#", "WPF"],
   },
 ]
 

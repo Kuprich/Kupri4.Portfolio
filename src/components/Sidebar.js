@@ -96,7 +96,9 @@ const Sidebar = () => {
       <div className="sidebar__descr">
         Вы можете найти меня в{" "}
         <a href="https://vk.com/id_223377" target="_blank">
-          <FontAwesomeIcon icon={faVk} className="link-icon" />
+          <i>
+            <FontAwesomeIcon icon={faVk} className="link-icon" />
+          </i>
           Вконтакте
         </a>
         , написать на почту, или же связяться co мной по <span>телефону</span>
@@ -112,19 +114,22 @@ const Sidebar = () => {
       </figure>
 
       <div className="contacts">
-        <div className="contacts__phone contacts__item">
-          <span className="contacts__icon">
+        <a className="contacts__phone contacts__item" href="tel:+79176983633">
+          <i className="contacts__icon">
             <FontAwesomeIcon icon={faMobileRetro} />
-          </span>
-          <span>+7 (999) 888 77-66</span>
-        </div>
+          </i>
+          <span>+7 (917) 698 36-33</span>
+        </a>
 
-        <div className=" contacts__mail contacts__item">
+        <a
+          className=" contacts__mail contacts__item"
+          href="mailto:ilya-kyp@yandex.ru"
+        >
           <span className="contacts__icon">
             <FontAwesomeIcon icon={faEnvelope} />
           </span>
           <span>ilya-kyp@yandex.ru</span>
-        </div>
+        </a>
       </div>
 
       <Modal

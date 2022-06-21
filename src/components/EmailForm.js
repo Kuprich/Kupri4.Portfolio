@@ -36,8 +36,9 @@ const EmailForm = ({ setShowEmailForm, formData, setformData }) => {
     <div>
       <form className="email-form" onSubmit={sendEmail} ref={emailForm}>
         <div className="email-form__name email-form__control">
-          <label htmlFor="from_name">Ваше Имя:</label>
+          <label htmlFor="from_name">Ваше имя:</label>
           <input
+            required
             type="text"
             name="from_name"
             value={formData.name}
@@ -47,6 +48,7 @@ const EmailForm = ({ setShowEmailForm, formData, setformData }) => {
         <div className="email-form__email email-form__control">
           <label htmlFor="reply_to">Ваш Email адрес:</label>
           <input
+            required
             type="email"
             name="reply_to"
             value={formData.email}
@@ -61,6 +63,7 @@ const EmailForm = ({ setShowEmailForm, formData, setformData }) => {
         <div className="email-form__message email-form__control">
           <label htmlFor="message">Текст сообщения:</label>
           <textarea
+            required
             type="text"
             name="message"
             value={formData.message}
