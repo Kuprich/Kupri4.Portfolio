@@ -1,26 +1,13 @@
 @import "~react-image-gallery/styles/scss/image-gallery.scss";
+@import "fonts";
 @import "variables";
 @import "mixins";
-@import "fonts";
 @import "sidebar";
 @import "pages/about";
 @import "pages/projects";
 @import "pages/project";
 
 // ================== General styles =================== //
-.loader {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: $dark-blue;
-  z-index: 1000;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 .Toastify__toast-body {
   font-family: "RobotoCondenced";
@@ -38,6 +25,9 @@ a:focus {
 
 a:hover {
   color: #000;
+}
+html {
+  font-family: "RobotoCondenced";
 }
 
 body {
