@@ -32,7 +32,7 @@ const Project = () => {
       exit="exit"
       variants={projectVariants}
     >
-      <div className="container">
+      <div className="container my-container">
         <div className="row">
           <div className="project-details__heading">
             <h3>{project.name}</h3>

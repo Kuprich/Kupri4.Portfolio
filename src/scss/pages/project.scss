@@ -27,6 +27,12 @@
     justify-content: space-between;
     margin: 10px 0;
   }
+  @include media("max", "lg") {
+    .project-details__desrc {
+      font-size: 18px;
+    }
+  }
+
   &__source-link {
     i {
       transition: 0.4s;

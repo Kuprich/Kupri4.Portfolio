@@ -166,7 +166,17 @@
   }
   width: 100%;
   padding: 8px 20px;
+
+  &:hover {
+    .skill-card__bar_fill {
+      background-color: $tomato;
+    }
+    .skill-card__title {
+      margin-left: 15px;
+    }
+  }
   &__title {
+    transition: 0.5s;
     font-size: 15px;
     margin-bottom: 3px;
   }
@@ -176,6 +186,7 @@
     height: 7px;
   }
   &__bar_fill {
+    transition: 0.5s;
     background-color: $dark-blue;
     height: 100%;
   }
@@ -189,6 +200,7 @@
     margin-bottom: 5px;
     font-size: 17px;
     padding-top: 0;
+    transition: 0.5s;
   }
   .CircularProgressbar-text {
     transform: translate(-10px, 8px);
@@ -196,5 +208,16 @@
   .circular-progressbar__wrapper {
     display: flex;
     justify-content: center;
+    .CircularProgressbar-path {
+      transition: 0.3s;
+    }
+  }
+  &:hover {
+    .CircularProgressbar-path {
+      stroke: $tomato !important;
+    }
+    .circle_skill-card__title {
+      transform: translatey(-10px);
+    }
   }
 }
